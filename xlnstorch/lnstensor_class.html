@@ -71,6 +71,32 @@ Defaults to <code class="docutils literal notranslate"><span class="pre">False</
 <p class="rubric">Notes</p>
 <p>The use of the <code class="docutils literal notranslate"><span class="pre">xlnstorch.Tensor</span></code> constructor is discouraged. Use
 <code class="docutils literal notranslate"><span class="pre">xlnstorch.lnstensor()</span></code> instead.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="xlnstorch.LNSTensor.backward">
+<span class="sig-name descname"><span class="pre">backward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gradient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retain_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.LNSTensor.backward" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the gradients of the current LNSTensor with respect to the graph leaves.
+This method is analogous to the standard PyTorch <cite>backward</cite> method, but works with
+LNSTensor objects. See</p>
+<p><a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.backward.html">https://docs.pytorch.org/docs/stable/generated/torch.Tensor.backward.html</a></p>
+<p>for more details on the parameters. Note that the <cite>gradient</cite> and <cite>inputs</cite> parameters
+here are LNSTensor objects, not regular PyTorch tensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gradient</strong> (<a class="reference internal" href="#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><em>optional</em>) – Gradient of the function being differentiated w.r.t. <cite>self</cite>. This argument should
+be omitted if <cite>self</cite> is a scalar. In this case, the gradient is set to 1.</p></li>
+<li><p><strong>retain_graph</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, the graph used to compute the gradient will be retained, allowing for
+further backward passes, by default None.</p></li>
+<li><p><strong>create_graph</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, the graph of the derivative will be constructed, allowing to compute higher
+order derivative products, by default False.</p></li>
+<li><p><strong>inputs</strong> (<em>sequence</em><em> of </em><a class="reference internal" href="#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><em>optional</em>) – Inputs with respect to which the gradient will be accumulated into their <cite>.grad</cite>
+attributes, all other tensors will be ignored. If not provided, the gradient is
+accumulated into all the leaf Tensors that were used to compute the tensors.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="xlnstorch.LNSTensor.lns">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><span class="pre">Tensor</span></a></em><a class="headerlink" href="#xlnstorch.LNSTensor.lns" title="Link to this definition">¶</a></dt>
