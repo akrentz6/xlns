@@ -98,6 +98,20 @@ accumulated into all the leaf Tensors that were used to compute the tensors.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="xlnstorch.LNSTensor.grad">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grad</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#xlnstorch.LNSTensor" title="xlnstorch.tensor.LNSTensor"><span class="pre">LNSTensor</span></a></em><a class="headerlink" href="#xlnstorch.LNSTensor.grad" title="Link to this definition">¶</a></dt>
+<dd><p>The gradient of the LNSTensor, if it has been computed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The gradient as an LNSTensor computed by PyTorch’s autograd.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor">LNSTensor</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="xlnstorch.LNSTensor.lns">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><span class="pre">Tensor</span></a></em><a class="headerlink" href="#xlnstorch.LNSTensor.lns" title="Link to this definition">¶</a></dt>
 <dd><p>The packed representation that <strong>does</strong> carry gradients.</p>
