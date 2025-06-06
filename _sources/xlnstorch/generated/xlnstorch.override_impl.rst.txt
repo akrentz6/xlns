@@ -1,6 +1,0 @@
-﻿xlnstorch.override\_impl
-========================
-
-.. currentmodule:: xlnstorch
-
-.. autofunction:: override_impl

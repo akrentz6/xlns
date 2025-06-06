@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xlnstorch.override_impl &mdash; xlns 1.0.5 documentation</title>
+  <title>xlnstorch.override_implementation &mdash; xlns 1.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="xlnstorch.apply_lns_op" href="xlnstorch.apply_lns_op.html" />
-    <link rel="prev" title="xlnstorch.set_default_implementation" href="xlnstorch.set_default_implementation.html" /> 
+    <link rel="prev" title="xlnstorch.get_default_implementation_key" href="xlnstorch.get_default_implementation_key.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,15 +45,23 @@
               <p class="caption" role="heading"><span class="caption-text">Packages</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">xlnstorch</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../xlnstorch.html">XLNS in PyTorch</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../xlnstorch.html#lnstensors">LNSTensors</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../xlnstorch.html#creation-operations">Creation Operations</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../xlnstorch.html#custom-operations">Custom Operations</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../lnstensors.html">LNS Tensors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../operations.html">Operations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.implements.html">xlnstorch.implements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.get_implementation.html">xlnstorch.get_implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.set_default_implementation.html">xlnstorch.set_default_implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.get_default_implementation_key.html">xlnstorch.get_default_implementation_key</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">xlnstorch.override_implementation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#xlnstorch.override_implementation"><code class="docutils literal notranslate"><span class="pre">override_implementation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.apply_lns_op.html">xlnstorch.apply_lns_op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.align_lnstensor_bases.html">xlnstorch.align_lnstensor_bases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.format_lnstensor_operands.html">xlnstorch.format_lnstensor_operands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.operators.implement_sbdb.html">xlnstorch.operators.implement_sbdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.operators.sbdb.html">xlnstorch.operators.sbdb</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -73,10 +81,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
-          <li class="breadcrumb-item"><a href="../xlnstorch.html">xlnstorch</a></li>
-      <li class="breadcrumb-item active">xlnstorch.override_impl</li>
+          <li class="breadcrumb-item"><a href="../operations.html">Operations</a></li>
+      <li class="breadcrumb-item active">xlnstorch.override_implementation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/xlnstorch/generated/xlnstorch.override_impl.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.override_implementation.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -84,11 +92,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xlnstorch-override-impl">
-<h1>xlnstorch.override_impl<a class="headerlink" href="#xlnstorch-override-impl" title="Link to this heading"></a></h1>
+  <section id="xlnstorch-override-implementation">
+<h1>xlnstorch.override_implementation<a class="headerlink" href="#xlnstorch-override-implementation" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.override_impl">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">override_impl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torch_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impl_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.override_impl" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="xlnstorch.override_implementation">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">override_implementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torch_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impl_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.override_implementation" title="Link to this definition"></a></dt>
 <dd><p>Temporarily override the default implementation for a torch function within a context.
 This allows for testing or using a different implementation without permanently changing
 the default.</p>
@@ -107,7 +115,7 @@ the default.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">override_impl</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="s1">&#39;custom_add_impl&#39;</span><span class="p">):</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">override_implementation</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="s1">&#39;custom_add_impl&#39;</span><span class="p">):</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Inside this block, torch.add will use &#39;custom_add_impl&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="k">pass</span>
 </pre></div>
@@ -120,7 +128,7 @@ the default.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xlnstorch.set_default_implementation.html" class="btn btn-neutral float-left" title="xlnstorch.set_default_implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.get_default_implementation_key.html" class="btn btn-neutral float-left" title="xlnstorch.get_default_implementation_key" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="xlnstorch.apply_lns_op.html" class="btn btn-neutral float-right" title="xlnstorch.apply_lns_op" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
