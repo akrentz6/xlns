@@ -1,6 +1,0 @@
-﻿xlnstorch.apply\_lns\_op
-========================
-
-.. currentmodule:: xlnstorch
-
-.. autofunction:: apply_lns_op
