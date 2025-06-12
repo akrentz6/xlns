@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="xlnstorch.LNSTensor.lns" href="generated/xlnstorch.LNSTensor.lns.html" />
+    <link rel="next" title="xlnstorch.LNSTensor.get_internal_tensor" href="generated/xlnstorch.LNSTensor.get_internal_tensor.html" />
     <link rel="prev" title="xlnstorch" href="index.html" /> 
 </head>
 
@@ -50,10 +50,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNSTensor"><code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNSTensor._lns"><code class="docutils literal notranslate"><span class="pre">LNSTensor._lns</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNSTensor.base"><code class="docutils literal notranslate"><span class="pre">LNSTensor.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.get_internal_tensor.html">xlnstorch.LNSTensor.get_internal_tensor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.lns.html">xlnstorch.LNSTensor.lns</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.value.html">xlnstorch.LNSTensor.value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.backward.html">xlnstorch.LNSTensor.backward</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.grad.html">xlnstorch.LNSTensor.grad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.shape.html">xlnstorch.LNSTensor.shape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.ndim.html">xlnstorch.LNSTensor.ndim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.backward.html">xlnstorch.LNSTensor.backward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.broadcast_to.html">xlnstorch.LNSTensor.broadcast_to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.dim.html">xlnstorch.LNSTensor.dim</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.lnstensor.html">xlnstorch.lnstensor</a></li>
 </ul>
 </li>
@@ -120,17 +125,32 @@ the use of this is discouraged.</p></li>
 
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.lns.html#xlnstorch.LNSTensor.lns" title="xlnstorch.LNSTensor.lns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.lns</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.get_internal_tensor.html#xlnstorch.LNSTensor.get_internal_tensor" title="xlnstorch.LNSTensor.get_internal_tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.get_internal_tensor</span></code></a></p></td>
+<td><p>Converts an array-like floating point value to an LNSTensor and returns the internal packed representation for a given base.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.lns.html#xlnstorch.LNSTensor.lns" title="xlnstorch.LNSTensor.lns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.lns</span></code></a></p></td>
 <td><p>The packed representation that <strong>does</strong> carry gradients.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.value.html#xlnstorch.LNSTensor.value" title="xlnstorch.LNSTensor.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.value</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.value.html#xlnstorch.LNSTensor.value" title="xlnstorch.LNSTensor.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.value</span></code></a></p></td>
 <td><p>Decode the packed integers back to ordinary floating-point numbers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.grad.html#xlnstorch.LNSTensor.grad" title="xlnstorch.LNSTensor.grad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.grad</span></code></a></p></td>
+<td><p>The gradient of the LNSTensor, if it has been computed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.shape.html#xlnstorch.LNSTensor.shape" title="xlnstorch.LNSTensor.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.shape</span></code></a></p></td>
+<td><p>Returns the shape of the LNSTensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.ndim.html#xlnstorch.LNSTensor.ndim" title="xlnstorch.LNSTensor.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.ndim</span></code></a></p></td>
+<td><p>Alias for <code class="xref py py-meth docutils literal notranslate"><span class="pre">dim()</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.backward.html#xlnstorch.LNSTensor.backward" title="xlnstorch.LNSTensor.backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.backward</span></code></a></p></td>
 <td><p>Computes the gradients of the current LNSTensor with respect to the graph leaves.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.grad.html#xlnstorch.LNSTensor.grad" title="xlnstorch.LNSTensor.grad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.grad</span></code></a></p></td>
-<td><p>The gradient of the LNSTensor, if it has been computed.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.broadcast_to.html#xlnstorch.LNSTensor.broadcast_to" title="xlnstorch.LNSTensor.broadcast_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.broadcast_to</span></code></a></p></td>
+<td><p>Broadcasts <code class="docutils literal notranslate"><span class="pre">self</span></code> to the shape <code class="docutils literal notranslate"><span class="pre">shape</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.dim.html#xlnstorch.LNSTensor.dim" title="xlnstorch.LNSTensor.dim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.dim</span></code></a></p></td>
+<td><p>Returns the number of dimensions of the LNSTensor.</p></td>
 </tr>
 </tbody>
 </table>
@@ -149,7 +169,7 @@ the use of this is discouraged.</p></li>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="xlnstorch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="generated/xlnstorch.LNSTensor.lns.html" class="btn btn-neutral float-right" title="xlnstorch.LNSTensor.lns" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="generated/xlnstorch.LNSTensor.get_internal_tensor.html" class="btn btn-neutral float-right" title="xlnstorch.LNSTensor.get_internal_tensor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
