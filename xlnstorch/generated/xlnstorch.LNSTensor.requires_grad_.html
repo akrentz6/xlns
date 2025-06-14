@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xlnstorch.zeros &mdash; xlns 1.0.5 documentation</title>
+  <title>xlnstorch.LNSTensor.requires_grad_ &mdash; xlns 1.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xlnstorch.zeros_like" href="xlnstorch.zeros_like.html" />
-    <link rel="prev" title="xlnstorch.lnstensor" href="xlnstorch.lnstensor.html" /> 
+    <link rel="next" title="xlnstorch.lnstensor" href="xlnstorch.lnstensor.html" />
+    <link rel="prev" title="xlnstorch.LNSTensor.detach" href="xlnstorch.LNSTensor.detach.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,8 +64,8 @@
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.squeeze.html">xlnstorch.LNSTensor.squeeze</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.unsqueeze.html">xlnstorch.LNSTensor.unsqueeze</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.detach.html">xlnstorch.LNSTensor.detach</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.requires_grad_.html">xlnstorch.LNSTensor.requires_grad_</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../lnstensors.html#creation-operations">Creation Operations</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.LNSTensor.requires_grad_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lnstensors.html#creation-operations">Creation Operations</a></li>
 </ul>
 </li>
 </ul>
@@ -91,9 +91,9 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
           <li class="breadcrumb-item"><a href="../lnstensors.html">xlnstorch.LNSTensor</a></li>
-      <li class="breadcrumb-item active">xlnstorch.zeros</li>
+      <li class="breadcrumb-item active">xlnstorch.LNSTensor.requires_grad_</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/xlnstorch/generated/xlnstorch.zeros.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.LNSTensor.requires_grad_.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -101,16 +101,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xlnstorch-zeros">
-<h1>xlnstorch.zeros<a class="headerlink" href="#xlnstorch-zeros" title="Link to this heading"></a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.zeros">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">zeros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.strided</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.zeros" title="Link to this definition"></a></dt>
-<dd><p>Returns an LNSTensor filled with zeros, with the specified shape and
-properties. See <cite>torch.zeros</cite> for more details on the parameters.</p>
+  <section id="xlnstorch-lnstensor-requires-grad">
+<h1>xlnstorch.LNSTensor.requires_grad_<a class="headerlink" href="#xlnstorch-lnstensor-requires-grad" title="Link to this heading"></a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="xlnstorch.LNSTensor.requires_grad_">
+<span class="sig-prename descclassname"><span class="pre">LNSTensor.</span></span><span class="sig-name descname"><span class="pre">requires_grad_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requires_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.LNSTensor.requires_grad_" title="Link to this definition"></a></dt>
+<dd><p>Sets the requires_grad flag for the LNSTensor in-place.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>requires_grad</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the LNSTensor will track gradients. Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The LNSTensor with the updated requires_grad flag.</p>
+</dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>LNSTensor</em></p>
+<dd class="field-odd"><p><a class="reference internal" href="../lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor">LNSTensor</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -121,8 +126,8 @@ properties. See <cite>torch.zeros</cite> for more details on the parameters.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xlnstorch.lnstensor.html" class="btn btn-neutral float-left" title="xlnstorch.lnstensor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="xlnstorch.zeros_like.html" class="btn btn-neutral float-right" title="xlnstorch.zeros_like" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="xlnstorch.LNSTensor.detach.html" class="btn btn-neutral float-left" title="xlnstorch.LNSTensor.detach" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.lnstensor.html" class="btn btn-neutral float-right" title="xlnstorch.lnstensor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
