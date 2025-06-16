@@ -62,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#internal-operations">Internal Operations</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#arithmetic-operations">Arithmetic Operations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#comparison-operations">Comparison Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#loss-operations">Loss Operations</a></li>
 </ul>
 </li>
 </ul>
@@ -260,6 +261,22 @@ operations. For the most part, these internal operator functions wrap the
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_minimum.html#xlnstorch.operators.lns_minimum" title="xlnstorch.operators.lns_minimum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_minimum</span></code></a></p></td>
 <td><p>See docs for <cite>torch.minimum</cite> for more details.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="loss-operations">
+<h3>Loss Operations<a class="headerlink" href="#loss-operations" title="Link to this heading"></a></h3>
+<p>Note that in practice, you should use the standard PyTorch
+loss classes, such as <code class="docutils literal notranslate"><span class="pre">torch.nn.MSELoss</span></code>, which are already
+implemented to work with <code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code> objects. However, if you
+want to implement your own custom loss functions, or want more
+control over the loss computation, you can use the following
+functions.</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_mse_loss.html#xlnstorch.operators.lns_mse_loss" title="xlnstorch.operators.lns_mse_loss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_mse_loss</span></code></a></p></td>
+<td><p>See docs for <cite>torch.nn.functional.mse_loss</cite> for more details.</p></td>
 </tr>
 </tbody>
 </table>
