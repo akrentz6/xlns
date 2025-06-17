@@ -63,6 +63,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#arithmetic-operations">Arithmetic Operations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#comparison-operations">Comparison Operations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#loss-operations">Loss Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activation-operations">Activation Operations</a></li>
 </ul>
 </li>
 </ul>
@@ -289,6 +290,34 @@ functions.</p>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_binary_cross_entropy.html#xlnstorch.operators.lns_binary_cross_entropy" title="xlnstorch.operators.lns_binary_cross_entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_binary_cross_entropy</span></code></a></p></td>
 <td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.binary_cross_entropy.html#torch.nn.functional.binary_cross_entropy" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.binary_cross_entropy()</span></code></a> for parameter/return details.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activation-operations">
+<h3>Activation Operations<a class="headerlink" href="#activation-operations" title="Link to this heading"></a></h3>
+<p>Again, in practice, you should use the standard PyTorch
+activation classes, such as <code class="docutils literal notranslate"><span class="pre">torch.nn.ReLU</span></code>, which are
+already implemented to work with <code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code> objects.</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_relu.html#xlnstorch.operators.lns_relu" title="xlnstorch.operators.lns_relu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_relu</span></code></a></p></td>
+<td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.relu.html#torch.nn.functional.relu" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.relu()</span></code></a> for parameter/return details.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_relu_.html#xlnstorch.operators.lns_relu_" title="xlnstorch.operators.lns_relu_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_relu_</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.relu_()</span></code> for parameter/return details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_leaky_relu.html#xlnstorch.operators.lns_leaky_relu" title="xlnstorch.operators.lns_leaky_relu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_leaky_relu</span></code></a></p></td>
+<td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.leaky_relu.html#torch.nn.functional.leaky_relu" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.leaky_relu()</span></code></a> for parameter/return details.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_leaky_relu_.html#xlnstorch.operators.lns_leaky_relu_" title="xlnstorch.operators.lns_leaky_relu_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_leaky_relu_</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch._C._nn.leaky_relu_()</span></code> for parameter/return details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_threshold.html#xlnstorch.operators.lns_threshold" title="xlnstorch.operators.lns_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_threshold</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional._threshold()</span></code> for parameter/return details.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_threshold_.html#xlnstorch.operators.lns_threshold_" title="xlnstorch.operators.lns_threshold_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_threshold_</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.threshold_()</span></code> for parameter/return details.</p></td>
 </tr>
 </tbody>
 </table>
