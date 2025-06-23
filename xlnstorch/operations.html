@@ -64,10 +64,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#comparison-operations">Comparison Operations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#loss-operations">Loss Operations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#activation-operations">Activation Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layer-operations">Layer Operations</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="layers.html">Layers</a></li>
 </ul>
 </li>
 </ul>
@@ -345,6 +347,37 @@ already implemented to work with <code class="docutils literal notranslate"><spa
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_log_softmax.html#xlnstorch.operators.lns_log_softmax" title="xlnstorch.operators.lns_log_softmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_log_softmax</span></code></a></p></td>
 <td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.log_softmax.html#torch.nn.functional.log_softmax" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.log_softmax()</span></code></a> for parameter/return details.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="layer-operations">
+<h3>Layer Operations<a class="headerlink" href="#layer-operations" title="Link to this heading"></a></h3>
+<p>As per usual, you should use the standard PyTorch
+layer classes, such as <code class="docutils literal notranslate"><span class="pre">torch.nn.Linear</span></code>, which
+support <code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code> objects.</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_linear.html#xlnstorch.operators.lns_linear" title="xlnstorch.operators.lns_linear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_linear</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch._C._nn.linear()</span></code> for parameter/return details.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_bilinear.html#xlnstorch.operators.lns_bilinear" title="xlnstorch.operators.lns_bilinear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_bilinear</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.bilinear()</span></code> for parameter/return details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_dropout.html#xlnstorch.operators.lns_dropout" title="xlnstorch.operators.lns_dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_dropout</span></code></a></p></td>
+<td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.dropout.html#torch.nn.functional.dropout" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.dropout()</span></code></a> for parameter/return details.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_dropout1d.html#xlnstorch.operators.lns_dropout1d" title="xlnstorch.operators.lns_dropout1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_dropout1d</span></code></a></p></td>
+<td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.dropout1d.html#torch.nn.functional.dropout1d" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.dropout1d()</span></code></a> for parameter/return details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_dropout2d.html#xlnstorch.operators.lns_dropout2d" title="xlnstorch.operators.lns_dropout2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_dropout2d</span></code></a></p></td>
+<td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.dropout2d.html#torch.nn.functional.dropout2d" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.dropout2d()</span></code></a> for parameter/return details.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_dropout3d.html#xlnstorch.operators.lns_dropout3d" title="xlnstorch.operators.lns_dropout3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_dropout3d</span></code></a></p></td>
+<td><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.dropout3d.html#torch.nn.functional.dropout3d" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.dropout3d()</span></code></a> for parameter/return details.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.operators.lns_conv1d.html#xlnstorch.operators.lns_conv1d" title="xlnstorch.operators.lns_conv1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operators.lns_conv1d</span></code></a></p></td>
+<td><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.conv1d()</span></code> for parameter/return details.</p></td>
 </tr>
 </tbody>
 </table>
