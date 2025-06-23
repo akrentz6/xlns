@@ -49,6 +49,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lnstensors.html">LNS Tensors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../operations.html">Operations</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../layers.html">Layers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSModule.html">xlnstorch.layers.LNSModule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSIdentity.html">xlnstorch.layers.LNSIdentity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSLinear.html">xlnstorch.layers.LNSLinear</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSBilinear.html">xlnstorch.layers.LNSBilinear</a></li>
@@ -61,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSDropout2d.html">xlnstorch.layers.LNSDropout2d</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSDropout3d.html">xlnstorch.layers.LNSDropout3d</a></li>
 <li class="toctree-l3"><a class="reference internal" href="xlnstorch.layers.LNSConv1d.html">xlnstorch.layers.LNSConv1d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layers.html#custom-layers">Custom Layers</a></li>
 </ul>
 </li>
 </ul>
@@ -102,8 +104,8 @@
 with a probability <span class="math notranslate nohighlight">\(p\)</span> during training. This is not strictly necessary, since
 there are no trainable parameters, but it is included for completeness.</p>
 <p>A channel is a 1D feature map, e.g., the <span class="math notranslate nohighlight">\(j\)</span>-th channel of the <span class="math notranslate nohighlight">\(i\)</span>-th
-sample in the batched input is a 1D tensor :math:`  ext{input}[i, j]`.</p>
-<p>See also: <cite>torch.nn.Dropout1d</cite></p>
+sample in the batched input is a 1D tensor <span class="math notranslate nohighlight">\(\text{input}[i, j]\)</span>.</p>
+<p>See also: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Dropout1d.html#torch.nn.Dropout1d" title="(in PyTorch v2.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.Dropout1d</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
