@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xlnstorch.full_like &mdash; xlns 1.0.5 documentation</title>
+  <title>xlnstorch.LNSTensor.size &mdash; xlns 1.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xlnstorch.rand" href="xlnstorch.rand.html" />
-    <link rel="prev" title="xlnstorch.full" href="xlnstorch.full.html" /> 
+    <link rel="next" title="xlnstorch.LNSTensor.numel" href="xlnstorch.LNSTensor.numel.html" />
+    <link rel="prev" title="xlnstorch.LNSTensor.requires_grad" href="xlnstorch.LNSTensor.requires_grad.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,7 +57,7 @@
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.shape.html">xlnstorch.LNSTensor.shape</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.ndim.html">xlnstorch.LNSTensor.ndim</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.requires_grad.html">xlnstorch.LNSTensor.requires_grad</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.size.html">xlnstorch.LNSTensor.size</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.LNSTensor.size</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.numel.html">xlnstorch.LNSTensor.numel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.backward.html">xlnstorch.LNSTensor.backward</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.broadcast_to.html">xlnstorch.LNSTensor.broadcast_to</a></li>
@@ -67,7 +67,7 @@
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.unsqueeze.html">xlnstorch.LNSTensor.unsqueeze</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.detach.html">xlnstorch.LNSTensor.detach</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.requires_grad_.html">xlnstorch.LNSTensor.requires_grad_</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../lnstensors.html#creation-operations">Creation Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lnstensors.html#creation-operations">Creation Operations</a></li>
 </ul>
 </li>
 </ul>
@@ -94,9 +94,9 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
           <li class="breadcrumb-item"><a href="../lnstensors.html">xlnstorch.LNSTensor</a></li>
-      <li class="breadcrumb-item active">xlnstorch.full_like</li>
+      <li class="breadcrumb-item active">xlnstorch.LNSTensor.size</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/xlnstorch/generated/xlnstorch.full_like.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.LNSTensor.size.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -104,17 +104,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xlnstorch-full-like">
-<h1>xlnstorch.full_like<a class="headerlink" href="#xlnstorch-full-like" title="Link to this heading"></a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.full_like">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">full_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires_grad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.preserve_format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.full_like" title="Link to this definition"></a></dt>
-<dd><p>Returns an LNSTensor filled with <cite>fill_value</cite>, with the same shape
-and properties as the input tensor. See <cite>torch.full_like</cite> for more
-details on the parameters.</p>
+  <section id="xlnstorch-lnstensor-size">
+<h1>xlnstorch.LNSTensor.size<a class="headerlink" href="#xlnstorch-lnstensor-size" title="Link to this heading"></a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="xlnstorch.LNSTensor.size">
+<span class="sig-prename descclassname"><span class="pre">LNSTensor.</span></span><span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.LNSTensor.size" title="Link to this definition"></a></dt>
+<dd><p>Returns the size of the LNSTensor along a specified dimension or all dimensions.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><em>optional</em>) – If specified, returns the size of the given dimension; otherwise,</p></li>
+<li><p><strong>dimensions.</strong> (<em>returns the size</em><em> of </em><em>all</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The size of the LNSTensor. The returned value is a <code class="docutils literal notranslate"><span class="pre">torch.Size</span></code> if
+<cite>dim</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, otherwise it returns an integer representing the
+size of the specified dimension.</p>
+</dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>LNSTensor</em></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.pytorch.org/docs/stable/size.html#torch.Size" title="(in PyTorch v2.7)">torch.Size</a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -125,8 +134,8 @@ details on the parameters.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xlnstorch.full.html" class="btn btn-neutral float-left" title="xlnstorch.full" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="xlnstorch.rand.html" class="btn btn-neutral float-right" title="xlnstorch.rand" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="xlnstorch.LNSTensor.requires_grad.html" class="btn btn-neutral float-left" title="xlnstorch.LNSTensor.requires_grad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.LNSTensor.numel.html" class="btn btn-neutral float-right" title="xlnstorch.LNSTensor.numel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
