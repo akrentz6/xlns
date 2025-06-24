@@ -58,6 +58,7 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.shape.html">xlnstorch.LNSTensor.shape</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.ndim.html">xlnstorch.LNSTensor.ndim</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.requires_grad.html">xlnstorch.LNSTensor.requires_grad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.item.html">xlnstorch.LNSTensor.item</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.size.html">xlnstorch.LNSTensor.size</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.numel.html">xlnstorch.LNSTensor.numel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.backward.html">xlnstorch.LNSTensor.backward</a></li>
@@ -186,34 +187,37 @@ the use of this is discouraged.</p></li>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.requires_grad.html#xlnstorch.LNSTensor.requires_grad" title="xlnstorch.LNSTensor.requires_grad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.requires_grad</span></code></a></p></td>
 <td><p>Returns whether the LNSTensor requires gradients.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.size.html#xlnstorch.LNSTensor.size" title="xlnstorch.LNSTensor.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.size</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.item.html#xlnstorch.LNSTensor.item" title="xlnstorch.LNSTensor.item"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.item</span></code></a></p></td>
+<td><p>Returns the value of the LNSTensor as a Python number.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.size.html#xlnstorch.LNSTensor.size" title="xlnstorch.LNSTensor.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.size</span></code></a></p></td>
 <td><p>Returns the size of the LNSTensor along a specified dimension or all dimensions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.numel.html#xlnstorch.LNSTensor.numel" title="xlnstorch.LNSTensor.numel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.numel</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.numel.html#xlnstorch.LNSTensor.numel" title="xlnstorch.LNSTensor.numel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.numel</span></code></a></p></td>
 <td><p>Returns the total number of elements in the LNSTensor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.backward.html#xlnstorch.LNSTensor.backward" title="xlnstorch.LNSTensor.backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.backward</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.backward.html#xlnstorch.LNSTensor.backward" title="xlnstorch.LNSTensor.backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.backward</span></code></a></p></td>
 <td><p>Computes the gradients of the current LNSTensor with respect to the graph leaves.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.broadcast_to.html#xlnstorch.LNSTensor.broadcast_to" title="xlnstorch.LNSTensor.broadcast_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.broadcast_to</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.broadcast_to.html#xlnstorch.LNSTensor.broadcast_to" title="xlnstorch.LNSTensor.broadcast_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.broadcast_to</span></code></a></p></td>
 <td><p>Broadcasts <code class="docutils literal notranslate"><span class="pre">self</span></code> to the shape <code class="docutils literal notranslate"><span class="pre">shape</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.dim.html#xlnstorch.LNSTensor.dim" title="xlnstorch.LNSTensor.dim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.dim</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.dim.html#xlnstorch.LNSTensor.dim" title="xlnstorch.LNSTensor.dim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.dim</span></code></a></p></td>
 <td><p>Returns the number of dimensions of the LNSTensor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.clone.html#xlnstorch.LNSTensor.clone" title="xlnstorch.LNSTensor.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.clone</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.clone.html#xlnstorch.LNSTensor.clone" title="xlnstorch.LNSTensor.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.clone</span></code></a></p></td>
 <td><p>Returns a copy of the LNSTensor with the same data and base.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.squeeze.html#xlnstorch.LNSTensor.squeeze" title="xlnstorch.LNSTensor.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.squeeze</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.squeeze.html#xlnstorch.LNSTensor.squeeze" title="xlnstorch.LNSTensor.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.squeeze</span></code></a></p></td>
 <td><p>Returns a new LNSTensor with all specified dimensions of size 1 removed.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.unsqueeze.html#xlnstorch.LNSTensor.unsqueeze" title="xlnstorch.LNSTensor.unsqueeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.unsqueeze</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.unsqueeze.html#xlnstorch.LNSTensor.unsqueeze" title="xlnstorch.LNSTensor.unsqueeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.unsqueeze</span></code></a></p></td>
 <td><p>Returns a new LNSTensor with a dimension of size one inserted at the specified position.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.detach.html#xlnstorch.LNSTensor.detach" title="xlnstorch.LNSTensor.detach"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.detach</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.detach.html#xlnstorch.LNSTensor.detach" title="xlnstorch.LNSTensor.detach"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.detach</span></code></a></p></td>
 <td><p>Returns a new LNSTensor that is detached from the current computation graph.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.requires_grad_.html#xlnstorch.LNSTensor.requires_grad_" title="xlnstorch.LNSTensor.requires_grad_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.requires_grad_</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.LNSTensor.requires_grad_.html#xlnstorch.LNSTensor.requires_grad_" title="xlnstorch.LNSTensor.requires_grad_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSTensor.requires_grad_</span></code></a></p></td>
 <td><p>Sets the requires_grad flag for the LNSTensor in-place.</p></td>
 </tr>
 </tbody>
