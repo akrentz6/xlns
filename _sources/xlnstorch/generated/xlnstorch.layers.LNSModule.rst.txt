@@ -40,6 +40,7 @@
       ~LNSModule.named_children
       ~LNSModule.named_modules
       ~LNSModule.named_parameters
+      ~LNSModule.parameter_groups
       ~LNSModule.parameters
       ~LNSModule.register_backward_hook
       ~LNSModule.register_buffer

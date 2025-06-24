@@ -40,6 +40,7 @@
       ~LNSLinear.named_children
       ~LNSLinear.named_modules
       ~LNSLinear.named_parameters
+      ~LNSLinear.parameter_groups
       ~LNSLinear.parameters
       ~LNSLinear.register_backward_hook
       ~LNSLinear.register_buffer

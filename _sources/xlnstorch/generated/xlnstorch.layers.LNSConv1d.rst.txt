@@ -40,6 +40,7 @@
       ~LNSConv1d.named_children
       ~LNSConv1d.named_modules
       ~LNSConv1d.named_parameters
+      ~LNSConv1d.parameter_groups
       ~LNSConv1d.parameters
       ~LNSConv1d.register_backward_hook
       ~LNSConv1d.register_buffer

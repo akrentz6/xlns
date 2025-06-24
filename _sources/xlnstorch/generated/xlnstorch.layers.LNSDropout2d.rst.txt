@@ -40,6 +40,7 @@
       ~LNSDropout2d.named_children
       ~LNSDropout2d.named_modules
       ~LNSDropout2d.named_parameters
+      ~LNSDropout2d.parameter_groups
       ~LNSDropout2d.parameters
       ~LNSDropout2d.register_backward_hook
       ~LNSDropout2d.register_buffer

@@ -40,6 +40,7 @@
       ~LNSBilinear.named_children
       ~LNSBilinear.named_modules
       ~LNSBilinear.named_parameters
+      ~LNSBilinear.parameter_groups
       ~LNSBilinear.parameters
       ~LNSBilinear.register_backward_hook
       ~LNSBilinear.register_buffer

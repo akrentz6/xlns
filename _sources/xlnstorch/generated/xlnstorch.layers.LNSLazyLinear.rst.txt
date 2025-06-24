@@ -40,6 +40,7 @@
       ~LNSLazyLinear.named_children
       ~LNSLazyLinear.named_modules
       ~LNSLazyLinear.named_parameters
+      ~LNSLazyLinear.parameter_groups
       ~LNSLazyLinear.parameters
       ~LNSLazyLinear.register_backward_hook
       ~LNSLazyLinear.register_buffer
