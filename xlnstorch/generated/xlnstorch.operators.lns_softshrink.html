@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xlnstorch.operators.lns_log_softmax &mdash; xlns 1.0.5 documentation</title>
+  <title>xlnstorch.operators.lns_softshrink &mdash; xlns 1.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xlnstorch.operators.lns_hardtanh" href="xlnstorch.operators.lns_hardtanh.html" />
-    <link rel="prev" title="xlnstorch.operators.lns_softmax" href="xlnstorch.operators.lns_softmax.html" /> 
+    <link rel="next" title="xlnstorch.operators.lns_hardsigmoid" href="xlnstorch.operators.lns_hardsigmoid.html" />
+    <link rel="prev" title="xlnstorch.operators.lns_softplus" href="xlnstorch.operators.lns_softplus.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -80,9 +80,9 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
           <li class="breadcrumb-item"><a href="../operations.html">Operations</a></li>
-      <li class="breadcrumb-item active">xlnstorch.operators.lns_log_softmax</li>
+      <li class="breadcrumb-item active">xlnstorch.operators.lns_softshrink</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/xlnstorch/generated/xlnstorch.operators.lns_log_softmax.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.operators.lns_softshrink.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,18 +90,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xlnstorch-operators-lns-log-softmax">
-<h1>xlnstorch.operators.lns_log_softmax<a class="headerlink" href="#xlnstorch-operators-lns-log-softmax" title="Link to this heading"></a></h1>
+  <section id="xlnstorch-operators-lns-softshrink">
+<h1>xlnstorch.operators.lns_softshrink<a class="headerlink" href="#xlnstorch-operators-lns-softshrink" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.operators.lns_log_softmax">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.operators.</span></span><span class="sig-name descname"><span class="pre">lns_log_softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.operators.lns_log_softmax" title="Link to this definition"></a></dt>
-<dd><p>See docs for <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.log_softmax.html#torch.nn.functional.log_softmax" title="(in PyTorch v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.nn.functional.log_softmax()</span></code></a> for parameter/return details. Typically, torch.Tensor arguments are the equivalent internal representations of LNStensors.</p>
+<dt class="sig sig-object py" id="xlnstorch.operators.lns_softshrink">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.operators.</span></span><span class="sig-name descname"><span class="pre">lns_softshrink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.operators.lns_softshrink" title="Link to this definition"></a></dt>
+<dd><p>See docs for <code class="xref py py-func docutils literal notranslate"><span class="pre">torch._C._nn.softshrink()</span></code> for parameter/return details. Typically, torch.Tensor arguments are the equivalent internal representations of LNStensors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><em>Tensor</em></a>)</p></li>
+<li><p><strong>lambd</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><em>Tensor</em></a>)</p></li>
 <li><p><strong>base</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><em>Tensor</em></a>)</p></li>
-<li><p><strong>dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -116,8 +116,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xlnstorch.operators.lns_softmax.html" class="btn btn-neutral float-left" title="xlnstorch.operators.lns_softmax" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="xlnstorch.operators.lns_hardtanh.html" class="btn btn-neutral float-right" title="xlnstorch.operators.lns_hardtanh" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="xlnstorch.operators.lns_softplus.html" class="btn btn-neutral float-left" title="xlnstorch.operators.lns_softplus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.operators.lns_hardsigmoid.html" class="btn btn-neutral float-right" title="xlnstorch.operators.lns_hardsigmoid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
