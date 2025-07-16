@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xlnstorch.operators.set_default_sbdb_implementation &mdash; xlns 1.0.5 documentation</title>
+  <title>xlnstorch.operators.register_xlnsconf_implementation &mdash; xlns 1.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xlnstorch.operators.override_sbdb_implementation" href="xlnstorch.operators.override_sbdb_implementation.html" />
-    <link rel="prev" title="xlnstorch.operators.implement_sbdb" href="xlnstorch.operators.implement_sbdb.html" /> 
+    <link rel="next" title="xlnstorch.operators.sbdb" href="xlnstorch.operators.sbdb.html" />
+    <link rel="prev" title="xlnstorch.operators.override_sbdb_implementation" href="xlnstorch.operators.override_sbdb_implementation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,9 +56,9 @@
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.align_lnstensor_bases.html">xlnstorch.align_lnstensor_bases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.format_lnstensor_operands.html">xlnstorch.format_lnstensor_operands</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.operators.implement_sbdb.html">xlnstorch.operators.implement_sbdb</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.operators.set_default_sbdb_implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.operators.set_default_sbdb_implementation.html">xlnstorch.operators.set_default_sbdb_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.operators.override_sbdb_implementation.html">xlnstorch.operators.override_sbdb_implementation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xlnstorch.operators.register_xlnsconf_implementation.html">xlnstorch.operators.register_xlnsconf_implementation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.operators.register_xlnsconf_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.operators.sbdb.html">xlnstorch.operators.sbdb</a></li>
 </ul>
 </li>
@@ -89,9 +89,9 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
           <li class="breadcrumb-item"><a href="../operations.html">Operations</a></li>
-      <li class="breadcrumb-item active">xlnstorch.operators.set_default_sbdb_implementation</li>
+      <li class="breadcrumb-item active">xlnstorch.operators.register_xlnsconf_implementation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/xlnstorch/generated/xlnstorch.operators.set_default_sbdb_implementation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.operators.register_xlnsconf_implementation.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -99,21 +99,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xlnstorch-operators-set-default-sbdb-implementation">
-<h1>xlnstorch.operators.set_default_sbdb_implementation<a class="headerlink" href="#xlnstorch-operators-set-default-sbdb-implementation" title="Link to this heading"></a></h1>
+  <section id="xlnstorch-operators-register-xlnsconf-implementation">
+<h1>xlnstorch.operators.register_xlnsconf_implementation<a class="headerlink" href="#xlnstorch-operators-register-xlnsconf-implementation" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.operators.set_default_sbdb_implementation">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.operators.</span></span><span class="sig-name descname"><span class="pre">set_default_sbdb_implementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impl_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.operators.set_default_sbdb_implementation" title="Link to this definition"></a></dt>
-<dd><p>Set the default implementation for the sbdb function.</p>
-<dl class="field-list simple">
+<dt class="sig sig-object py" id="xlnstorch.operators.register_xlnsconf_implementation">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.operators.</span></span><span class="sig-name descname"><span class="pre">register_xlnsconf_implementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xlns_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impl_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.operators.register_xlnsconf_implementation" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>impl_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The key identifying the implementation to be set as default.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xlns_function</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.13)"><em>Callable</em></a>)</p></li>
+<li><p><strong>impl_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>)</p></li>
+</ul>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If the specified implementation key is not registered for the sbdb function.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -124,8 +123,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xlnstorch.operators.implement_sbdb.html" class="btn btn-neutral float-left" title="xlnstorch.operators.implement_sbdb" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="xlnstorch.operators.override_sbdb_implementation.html" class="btn btn-neutral float-right" title="xlnstorch.operators.override_sbdb_implementation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="xlnstorch.operators.override_sbdb_implementation.html" class="btn btn-neutral float-left" title="xlnstorch.operators.override_sbdb_implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.operators.sbdb.html" class="btn btn-neutral float-right" title="xlnstorch.operators.sbdb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
