@@ -191,6 +191,23 @@ different input ranges.</p>
 </pre></div>
 </div>
 </section>
+<section id="range-analysis">
+<h2>Range Analysis<a class="headerlink" href="#range-analysis" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="generated/xlnstorch.viz.plot_staircase.html#xlnstorch.viz.plot_staircase" title="xlnstorch.viz.plot_staircase"><code class="xref py py-func docutils literal notranslate"><span class="pre">viz.plot_staircase()</span></code></a> visualizes the staircase representation of LNS numbers
+and shows how different precisions affect the representation of numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">xlnstorch</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_staircase</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="generated/xlnstorch.viz.plot_spacing_heatmap.html#xlnstorch.viz.plot_spacing_heatmap" title="xlnstorch.viz.plot_spacing_heatmap"><code class="xref py py-func docutils literal notranslate"><span class="pre">viz.plot_spacing_heatmap()</span></code></a> vizualizes the spacing of representations of LNS
+numbers across different precisions. This helps understand how LNS numbers are
+distributed and how precision affects their representation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlnstorch</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_spacing_heatmap</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
