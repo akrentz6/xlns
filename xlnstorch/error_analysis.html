@@ -208,6 +208,30 @@ distributed and how precision affects their representation.</p>
 </pre></div>
 </div>
 </section>
+<section id="distribution-analysis">
+<h2>Distribution Analysis<a class="headerlink" href="#distribution-analysis" title="Link to this heading"></a></h2>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">viz.plot_lns_error_heatmap()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlnstorch</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_lns_error_heatmap</span><span class="p">(</span>
+    <span class="n">f_range</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+    <span class="n">low</span><span class="o">=-</span><span class="mf">4.0</span><span class="p">,</span>
+    <span class="n">high</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span>
+    <span class="n">n_cols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">steps</span><span class="o">=</span><span class="mi">3000</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_lns_distribution()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xlnstorch</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_lns_distribution</span><span class="p">(</span>
+    <span class="n">f</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">low</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">high</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
+    <span class="n">step_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
