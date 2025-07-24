@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>xlnstorch.nn.LNSModule &mdash; xlns 1.0.5 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -114,8 +114,8 @@ the <cite>param._lns</cite> attribute into a <cite>torch.nn.Parameter</cite> and
 the name <cite>param_lns</cite> in the module. This is necessary to ensure that PyTorch
 has visibility of the LNS parameters for optimization and state management.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomLayer</span><span class="p">(</span><span class="n">xlnstorch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">LNSModule</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">CustomLayer</span><span class="p">(</span><span class="n">xlnstorch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">LNSModule</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">register_parameter</span><span class="p">(</span><span class="s2">&quot;custom_param&quot;</span><span class="p">,</span> <span class="n">xlnstorch</span><span class="o">.</span><span class="n">lnstensor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span> <span class="o">=</span> <span class="n">CustomLayer</span><span class="p">()</span>

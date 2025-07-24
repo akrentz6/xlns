@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Precision Comparison &mdash; xlns 1.0.5 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
@@ -107,9 +107,9 @@ not vary with precision.</p>
 precision configurations. It automatically tests multiple precision levels and
 computes error metrics for each.</p>
 <p><strong>Basic Precision Sweep</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">precision_sweep_analysis</span><span class="p">,</span> <span class="n">plot_precision_comparison</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">xlnstorch.viz</span> <span class="kn">import</span> <span class="n">precision_sweep_analysis</span><span class="p">,</span> <span class="n">plot_precision_comparison</span>
 
 <span class="c1"># Analyze multiplication across different precisions</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">precision_sweep_analysis</span><span class="p">(</span>
@@ -141,8 +141,8 @@ computes error metrics for each.</p>
 <p><strong>Error Metric Plots</strong></p>
 <p><a class="reference internal" href="generated/xlnstorch.viz.plot_precision_comparison.html#xlnstorch.viz.plot_precision_comparison" title="xlnstorch.viz.plot_precision_comparison"><code class="xref py py-func docutils literal notranslate"><span class="pre">viz.plot_precision_comparison()</span></code></a> creates line plots showing how different
 error metrics change with precision:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">precision_sweep_analysis</span><span class="p">,</span> <span class="n">plot_precision_comparison</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">xlnstorch.viz</span> <span class="kn">import</span> <span class="n">precision_sweep_analysis</span><span class="p">,</span> <span class="n">plot_precision_comparison</span>
 
 <span class="c1"># Analyze division operation</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">precision_sweep_analysis</span><span class="p">(</span>
@@ -167,7 +167,7 @@ error metrics change with precision:</p>
 <p><strong>Heatmap Grid Visualization</strong></p>
 <p><a class="reference internal" href="generated/xlnstorch.viz.plot_precision_heatmap_grid.html#xlnstorch.viz.plot_precision_heatmap_grid" title="xlnstorch.viz.plot_precision_heatmap_grid"><code class="xref py py-func docutils literal notranslate"><span class="pre">viz.plot_precision_heatmap_grid()</span></code></a> creates a grid of heatmaps showing
 error patterns at different precision levels:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">precision_sweep_analysis</span><span class="p">,</span> <span class="n">plot_precision_heatmap_grid</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xlnstorch.viz</span> <span class="kn">import</span> <span class="n">precision_sweep_analysis</span><span class="p">,</span> <span class="n">plot_precision_heatmap_grid</span>
 
 <span class="c1"># Analyze power operation</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">precision_sweep_analysis</span><span class="p">(</span>
@@ -338,7 +338,7 @@ error patterns at different precision levels:</p>
 </pre></div>
 </div>
 <p><strong>Finding Optimal Precision</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_optimal_precision</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">error_threshold</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_optimal_precision</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">error_threshold</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Find minimum precision that meets error threshold.&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
         <span class="k">if</span> <span class="n">results</span><span class="p">[</span><span class="n">f</span><span class="p">][</span><span class="s1">&#39;max_error&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">error_threshold</span><span class="p">:</span>
@@ -357,7 +357,7 @@ error patterns at different precision levels:</p>
 </pre></div>
 </div>
 <p><strong>Custom Analysis Functions</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">analyze_precision_efficiency</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">analyze_precision_efficiency</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Comprehensive precision analysis with efficiency metrics.&quot;&quot;&quot;</span>
     <span class="n">results</span> <span class="o">=</span> <span class="n">precision_sweep_analysis</span><span class="p">(</span>
         <span class="n">operation</span><span class="p">,</span>

@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Error Analysis &mdash; xlns 1.0.5 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
@@ -107,8 +107,8 @@ Decimal arithmetic. This is useful for understanding how LNS errors vary across
 different input ranges.</p>
 <p><strong>Unary Operations</strong></p>
 <p>For unary operations (like <code class="docutils literal notranslate"><span class="pre">torch.exp</span></code>, <code class="docutils literal notranslate"><span class="pre">torch.log</span></code>), provide only <code class="docutils literal notranslate"><span class="pre">x_range</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_error_grid</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">xlnstorch.viz</span> <span class="kn">import</span> <span class="n">make_error_grid</span>
 
 <span class="c1"># Analyze exponential function errors</span>
 <span class="n">xs</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">make_error_grid</span><span class="p">(</span>
@@ -133,7 +133,7 @@ different input ranges.</p>
 </div>
 <p><strong>Custom Reference Functions</strong></p>
 <p>You can provide custom reference functions for operations not in the default mapping:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">exact_sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exact_sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">exp</span><span class="p">())</span>
 
 <span class="n">xs</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">make_error_grid</span><span class="p">(</span>
@@ -152,9 +152,9 @@ different input ranges.</p>
 <li><p><strong>Unary operations</strong>: Displayed as horizontal color stripes</p></li>
 <li><p><strong>Binary operations</strong>: Displayed as 2D heatmaps</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_error_grid</span><span class="p">,</span> <span class="n">plot_error_heatmap</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">xlnstorch.viz</span> <span class="kn">import</span> <span class="n">make_error_grid</span><span class="p">,</span> <span class="n">plot_error_heatmap</span>
 
 <span class="c1"># Analyze a single operation</span>
 <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">make_error_grid</span><span class="p">(</span>

@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benchmarking &mdash; xlns 1.0.5 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
@@ -119,9 +119,9 @@ standard PyTorch and LNS implementations.</p>
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
 <p>Here’s a simple example of benchmarking a unary operation:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">xlnstorch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xltorch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.benchmark</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnaryBench</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">xlnstorch</span> <span class="k">as</span> <span class="nn">xltorch</span>
+<span class="kn">from</span> <span class="nn">xlnstorch.benchmark</span> <span class="kn">import</span> <span class="n">UnaryBench</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
 
 <span class="c1"># Benchmark LNS ReLU operation</span>
 <span class="n">bench</span> <span class="o">=</span> <span class="n">UnaryBench</span><span class="p">(</span>
@@ -188,19 +188,19 @@ unary benchmark with a binary one:</p>
 <h2>Creating Custom Benchmarks<a class="headerlink" href="#creating-custom-benchmarks" title="Link to this heading"></a></h2>
 <p>To create a custom benchmark, inherit from <a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-class docutils literal notranslate"><span class="pre">benchmark.Benchmark</span></code></a> and
 implement the required methods:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.benchmark</span><span class="w"> </span><span class="kn">import</span> <span class="n">Benchmark</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">xlnstorch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xltorch</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xlnstorch.benchmark</span> <span class="kn">import</span> <span class="n">Benchmark</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
+<span class="kn">import</span> <span class="nn">xlnstorch</span> <span class="k">as</span> <span class="nn">xltorch</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomBench</span><span class="p">(</span><span class="n">Benchmark</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MyCustomBench</span><span class="p">(</span><span class="n">Benchmark</span><span class="p">):</span>
     <span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cpu&quot;</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">make_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">make_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Return inputs as tuple or dict</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="c1"># The operation to benchmark</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">@</span> <span class="n">y</span>  <span class="c1"># Matrix multiplication</span>
 
@@ -248,9 +248,9 @@ performance analysis:</p>
 <section id="comparing-implementations">
 <h2>Comparing Implementations<a class="headerlink" href="#comparing-implementations" title="Link to this heading"></a></h2>
 <p>A common use case is comparing LNS vs standard PyTorch performance:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">xlnstorch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xltorch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">xlnstorch.benchmark</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnaryBench</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">xlnstorch</span> <span class="k">as</span> <span class="nn">xltorch</span>
+<span class="kn">from</span> <span class="nn">xlnstorch.benchmark</span> <span class="kn">import</span> <span class="n">UnaryBench</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
 
 <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 
