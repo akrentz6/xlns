@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="xlnstorch.LNSTensor.get_internal_tensor" href="generated/xlnstorch.LNSTensor.get_internal_tensor.html" />
-    <link rel="prev" title="xlnstorch" href="index.html" /> 
+    <link rel="prev" title="xlnstorch.empty_like" href="generated/xlnstorch.empty_like.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,7 +46,8 @@
               <p class="caption" role="heading"><span class="caption-text">Packages</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">xlnstorch</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">LNS Tensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="xlnstorch.html">xlnstorch</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">xlnstorch.LNSTensor</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mathematical-context-and-internal-representation">Mathematical Context and Internal Representation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lnstensor-class-reference">LNSTensor class reference</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNSTensor"><code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code></a></li>
@@ -69,7 +70,6 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.unsqueeze.html">xlnstorch.LNSTensor.unsqueeze</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.detach.html">xlnstorch.LNSTensor.detach</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/xlnstorch.LNSTensor.requires_grad_.html">xlnstorch.LNSTensor.requires_grad_</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#creation-operations">Creation Operations</a></li>
 </ul>
 </li>
 </ul>
@@ -225,46 +225,6 @@ the use of this is discouraged.</p></li>
 </tr>
 </tbody>
 </table>
-<section id="creation-operations">
-<h3>Creation Operations<a class="headerlink" href="#creation-operations" title="Link to this heading"></a></h3>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.lnstensor.html#xlnstorch.lnstensor" title="xlnstorch.lnstensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lnstensor</span></code></a></p></td>
-<td><p>Constructs an <a class="reference internal" href="#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">LNSTensor</span></code></a> from some array-like <em>data</em>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.zeros.html#xlnstorch.zeros" title="xlnstorch.zeros"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with zeros, with the specified shape and properties.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.zeros_like.html#xlnstorch.zeros_like" title="xlnstorch.zeros_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeros_like</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with zeros, with the same shape and properties as the input tensor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.ones.html#xlnstorch.ones" title="xlnstorch.ones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with ones, with the specified shape and properties.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.ones_like.html#xlnstorch.ones_like" title="xlnstorch.ones_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones_like</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with ones, with the same shape and properties as the input tensor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.full.html#xlnstorch.full" title="xlnstorch.full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with <cite>fill_value</cite>, with the specified shape and properties.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.full_like.html#xlnstorch.full_like" title="xlnstorch.full_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_like</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with <cite>fill_value</cite>, with the same shape and properties as the input tensor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.rand.html#xlnstorch.rand" title="xlnstorch.rand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rand</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with random numbers from a uniform distribution on the interval [0, 1], with the specified shape and properties.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.rand_like.html#xlnstorch.rand_like" title="xlnstorch.rand_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rand_like</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with random numbers from a uniform distribution on the interval [0, 1], with the same shape and properties as the input tensor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.randn.html#xlnstorch.randn" title="xlnstorch.randn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">randn</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with random numbers from a normal distribution with mean 0 and variance 1, with the specified shape and properties.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.randn_like.html#xlnstorch.randn_like" title="xlnstorch.randn_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">randn_like</span></code></a></p></td>
-<td><p>Returns an LNSTensor filled with random numbers from a normal distribution with mean 0 and variance 1, with the same shape and properties as the input tensor.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
 </section>
 </section>
 
@@ -272,7 +232,7 @@ the use of this is discouraged.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="xlnstorch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="generated/xlnstorch.empty_like.html" class="btn btn-neutral float-left" title="xlnstorch.empty_like" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="generated/xlnstorch.LNSTensor.get_internal_tensor.html" class="btn btn-neutral float-right" title="xlnstorch.LNSTensor.get_internal_tensor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
