@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xlnstorch.override_implementation &mdash; xlns 1.0.5 documentation</title>
+  <title>xlnstorch.register_xlnsconf_implementation &mdash; xlns 1.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xlnstorch.implements_sbdb" href="xlnstorch.implements_sbdb.html" />
-    <link rel="prev" title="xlnstorch.get_default_implementation_key" href="xlnstorch.get_default_implementation_key.html" /> 
+    <link rel="next" title="xlnstorch.sbdb" href="xlnstorch.sbdb.html" />
+    <link rel="prev" title="xlnstorch.override_sbdb_implementation" href="xlnstorch.override_sbdb_implementation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,11 +53,11 @@
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.get_implementation.html">xlnstorch.get_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.set_default_implementation.html">xlnstorch.set_default_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.get_default_implementation_key.html">xlnstorch.get_default_implementation_key</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.override_implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.override_implementation.html">xlnstorch.override_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.implements_sbdb.html">xlnstorch.implements_sbdb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.set_default_sbdb_implementation.html">xlnstorch.set_default_sbdb_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.override_sbdb_implementation.html">xlnstorch.override_sbdb_implementation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xlnstorch.register_xlnsconf_implementation.html">xlnstorch.register_xlnsconf_implementation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.register_xlnsconf_implementation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.sbdb.html">xlnstorch.sbdb</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.align_lnstensor_bases.html">xlnstorch.align_lnstensor_bases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="xlnstorch.format_lnstensor_operands.html">xlnstorch.format_lnstensor_operands</a></li>
@@ -91,9 +91,9 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
           <li class="breadcrumb-item"><a href="../xlnstorch.html">xlnstorch</a></li>
-      <li class="breadcrumb-item active">xlnstorch.override_implementation</li>
+      <li class="breadcrumb-item active">xlnstorch.register_xlnsconf_implementation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/xlnstorch/generated/xlnstorch.override_implementation.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.register_xlnsconf_implementation.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -101,34 +101,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="xlnstorch-override-implementation">
-<h1>xlnstorch.override_implementation<a class="headerlink" href="#xlnstorch-override-implementation" title="Link to this heading"></a></h1>
+  <section id="xlnstorch-register-xlnsconf-implementation">
+<h1>xlnstorch.register_xlnsconf_implementation<a class="headerlink" href="#xlnstorch-register-xlnsconf-implementation" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.override_implementation">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">override_implementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">torch_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impl_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.override_implementation" title="Link to this definition"></a></dt>
-<dd><p>Temporarily override the default implementation for a torch function within a context.
-This allows for testing or using a different implementation without permanently changing
-the default.</p>
+<dt class="sig sig-object py" id="xlnstorch.register_xlnsconf_implementation">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">register_xlnsconf_implementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xlns_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impl_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.register_xlnsconf_implementation" title="Link to this definition"></a></dt>
+<dd><p>Registers an implementation of the sbdb function using a ufunc from the xlnsconf
+packed. This allows for experimentation with implementations from xlnsconf that
+haven’t been ported to xlnstorch yet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>torch_function</strong> (<em>Callable</em>) – The torch function for which the implementation is to be temporarily overridden.</p></li>
-<li><p><strong>impl_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The key identifying the new implementation to use as default.</p></li>
+<li><p><strong>xlns_function</strong> (<em>Callable</em>) – The xlnsconf ufunc that implements the sbdb function.</p></li>
+<li><p><strong>impl_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The key to register the sbdb function under. This should be unique
+across all sbdb implementations.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Yields<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>None</em> – The function yields control back to the context block.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If an sbdb function with the given key is already registered.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.13)"><em>Generator</em></a>[None, None, None]</p>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">override_implementation</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="s1">&#39;custom_add_impl&#39;</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Inside this block, torch.add will use &#39;custom_add_impl&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">pass</span>
-</pre></div>
-</div>
 </dd></dl>
 
 </section>
@@ -137,8 +132,8 @@ the default.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xlnstorch.get_default_implementation_key.html" class="btn btn-neutral float-left" title="xlnstorch.get_default_implementation_key" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="xlnstorch.implements_sbdb.html" class="btn btn-neutral float-right" title="xlnstorch.implements_sbdb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="xlnstorch.override_sbdb_implementation.html" class="btn btn-neutral float-left" title="xlnstorch.override_sbdb_implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.sbdb.html" class="btn btn-neutral float-right" title="xlnstorch.sbdb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
