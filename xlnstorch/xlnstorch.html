@@ -67,7 +67,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNS_ZERO"><code class="docutils literal notranslate"><span class="pre">LNS_ZERO</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNS_ONE"><code class="docutils literal notranslate"><span class="pre">LNS_ONE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xlnstorch.LNS_NEG_ONE"><code class="docutils literal notranslate"><span class="pre">LNS_NEG_ONE</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#xlnstorch._C_AVAILABLE"><code class="docutils literal notranslate"><span class="pre">_C_AVAILABLE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xlnstorch.CSRC_AVAILABLE"><code class="docutils literal notranslate"><span class="pre">CSRC_AVAILABLE</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#custom-operations">Custom Operations</a><ul>
@@ -199,13 +199,14 @@ is independent of base. It is defined to be
 </dd></dl>
 
 <dl class="py data">
-<dt class="sig sig-object py" id="xlnstorch._C_AVAILABLE">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">_C_AVAILABLE</span></span><a class="headerlink" href="#xlnstorch._C_AVAILABLE" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="xlnstorch.CSRC_AVAILABLE">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.</span></span><span class="sig-name descname"><span class="pre">CSRC_AVAILABLE</span></span><a class="headerlink" href="#xlnstorch.CSRC_AVAILABLE" title="Link to this definition"></a></dt>
 <dd><p>A boolean flag indicating whether the C++ extension is available.
-When True,  high-performance C++ implementations are used; when
+When True, high-performance C++ implementations are used; when
 False, pure Python implementations are used as fallback. To find
 out why the C++ extension is not available, install the xlnstorch
-package with the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to see the build logs.</p>
+package with the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag to see the build logs. The
+internal C++ functions can be accessed via the <code class="docutils literal notranslate"><span class="pre">csrc</span></code> submodule.</p>
 </dd></dl>
 
 </section>
