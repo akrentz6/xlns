@@ -110,7 +110,7 @@ are specifically designed to handle LNSTensor parameters. They support:</p>
 <ul class="simple">
 <li><p>LNSTensor and regular float learning rates and hyperparameters</p></li>
 <li><p>Automatic gradient handling for LNS arithmetic</p></li>
-<li><p>Parameter groups from LNS layers using <code class="docutils literal notranslate"><span class="pre">model.parameter_groups()</span></code></p></li>
+<li><p>Parameter groups from LNS layers using <code class="docutils literal notranslate"><span class="pre">model.lns_parameters()</span></code></p></li>
 <li><p>Standard optimizer features like momentum, weight decay, and adaptive learning rates</p></li>
 </ul>
 </section>
@@ -126,7 +126,7 @@ are specifically designed to handle LNSTensor parameters. They support:</p>
 <span class="n">target</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">lnstensor</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 
 <span class="c1"># Initialize optimizer with model parameters</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">LNSSGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameter_groups</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">LNSSGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">lns_parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 
 <span class="c1"># Training loop</span>
@@ -144,11 +144,11 @@ are specifically designed to handle LNSTensor parameters. They support:</p>
 <section id="parameter-groups">
 <h2>Parameter Groups<a class="headerlink" href="#parameter-groups" title="Link to this heading"></a></h2>
 <p>LNS optimizers work with parameter groups obtained from LNS layers using the
-<code class="docutils literal notranslate"><span class="pre">parameter_groups()</span></code> method. This method returns an iterable of parameter
+<code class="docutils literal notranslate"><span class="pre">lns_parameters()</span></code> method. This method returns an iterable of parameter
 dictionaries that contain both weights and biases in LNS format.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get parameter groups from a model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">LNSLinear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">param_groups</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">parameter_groups</span><span class="p">()</span>
+<span class="n">param_groups</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">lns_parameters</span><span class="p">()</span>
 
 <span class="c1"># Initialize optimizer with parameter groups</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">xltorch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">LNSAdam</span><span class="p">(</span><span class="n">param_groups</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
@@ -204,7 +204,7 @@ for more details on the SGD algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.001). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>momentum</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Momentum factor (default: 0.0). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>dampening</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Dampening for momentum (default: 0.0). Must be a non-negative LNSTensor or float.</p></li>
@@ -215,7 +215,7 @@ This should be obtained from a model’s <cite>parameter_groups()</cite> method.
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">xlnstorch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">LNSSGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameter_groups</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">xlnstorch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">LNSSGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">lns_parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span> <span class="c1"># Clear gradients before the step</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">loss_fn</span><span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="nb">input</span><span class="p">),</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span> <span class="c1"># Compute gradients</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span> <span class="c1"># Update parameters based on gradients</span>
@@ -246,7 +246,7 @@ documentation for more details on the Adam algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.001). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>betas</strong> (<em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>] or </em><em>Tuple</em><em>[</em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>]</em><em>, </em><em>optional</em>) – Coefficients used for computing running averages of gradient and its square
 (default: (0.9, 0.999)). Must be two non-negative LNSTensor or float values
@@ -281,7 +281,7 @@ documentation for more details on the AdamW algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.001). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>betas</strong> (<em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>] or </em><em>Tuple</em><em>[</em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>]</em><em>, </em><em>optional</em>) – Coefficients used for computing running averages of gradient and its square
 (default: (0.9, 0.999)). Must be two non-negative LNSTensor or float values
@@ -315,7 +315,7 @@ documentation for more details on the Adamax algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.002). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>betas</strong> (<em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>] or </em><em>Tuple</em><em>[</em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>]</em><em>, </em><em>optional</em>) – Coefficients used for computing running averages of gradient and its square
 (default: (0.9, 0.999)). Must be two non-negative LNSTensor or float values
@@ -347,7 +347,7 @@ documentation for more details on the NAdam algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.002). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>betas</strong> (<em>Tuple</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>] or </em><em>Tuple</em><em>[</em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>]</em><em>, </em><em>optional</em>) – Coefficients used for computing running averages of gradient and its square
 (default: (0.9, 0.999)). Must be two non-negative LNSTensor or float values
@@ -396,7 +396,7 @@ for more details on the Adagrad algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.01). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>lr_decay</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate decay factor (default: 0.0). Must be a non-negative LNSTensor
 or float.</p></li>
@@ -431,7 +431,7 @@ documentation for more details on the Adamax algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.002). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>rho</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Coefficient used for computing running averages of gradient (default: 0.9).
 Must be a non-negative LNSTensor or float in the range (0.0, 1.0).</p></li>
@@ -463,7 +463,7 @@ for more details on the RMSprop algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.01). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>alpha</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Smoothing constant (default: 0.99). Must be a non-negative LNSTensor or float
 in the range [0.0, 1.0).</p></li>
@@ -499,7 +499,7 @@ for more details on the Rprop algorithm.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.01). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>etas</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><em>tuple</em></a><em> of </em><a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)"><em>tuple</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Tuple of two factors (η₋, η₊) for decreasing and increasing the step size
 (default: (0.5, 1.2)). Must satisfy 0 &lt; η₋ &lt; 1 and η₊ &gt; 1.</p></li>
@@ -533,7 +533,7 @@ closely as possible.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
-This should be obtained from a model’s <cite>parameter_groups()</cite> method.</p></li>
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
 <li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.001). Must be a non-negative LNSTensor or float.</p></li>
 <li><p><strong>lambd</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Coefficient for the learning rate decay (default: 0.0001). Must be a non-negative
 LNSTensor or float.</p></li>

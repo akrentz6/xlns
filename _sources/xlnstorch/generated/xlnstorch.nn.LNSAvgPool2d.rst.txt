@@ -33,6 +33,7 @@
       ~LNSAvgPool2d.get_submodule
       ~LNSAvgPool2d.half
       ~LNSAvgPool2d.ipu
+      ~LNSAvgPool2d.lns_parameters
       ~LNSAvgPool2d.load_state_dict
       ~LNSAvgPool2d.modules
       ~LNSAvgPool2d.mtia
@@ -40,7 +41,6 @@
       ~LNSAvgPool2d.named_children
       ~LNSAvgPool2d.named_modules
       ~LNSAvgPool2d.named_parameters
-      ~LNSAvgPool2d.parameter_groups
       ~LNSAvgPool2d.parameters
       ~LNSAvgPool2d.register_backward_hook
       ~LNSAvgPool2d.register_buffer

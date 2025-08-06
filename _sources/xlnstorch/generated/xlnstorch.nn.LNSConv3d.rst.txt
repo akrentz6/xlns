@@ -33,6 +33,7 @@
       ~LNSConv3d.get_submodule
       ~LNSConv3d.half
       ~LNSConv3d.ipu
+      ~LNSConv3d.lns_parameters
       ~LNSConv3d.load_state_dict
       ~LNSConv3d.modules
       ~LNSConv3d.mtia
@@ -40,7 +41,6 @@
       ~LNSConv3d.named_children
       ~LNSConv3d.named_modules
       ~LNSConv3d.named_parameters
-      ~LNSConv3d.parameter_groups
       ~LNSConv3d.parameters
       ~LNSConv3d.register_backward_hook
       ~LNSConv3d.register_buffer

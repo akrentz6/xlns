@@ -33,6 +33,7 @@
       ~LNSConv2d.get_submodule
       ~LNSConv2d.half
       ~LNSConv2d.ipu
+      ~LNSConv2d.lns_parameters
       ~LNSConv2d.load_state_dict
       ~LNSConv2d.modules
       ~LNSConv2d.mtia
@@ -40,7 +41,6 @@
       ~LNSConv2d.named_children
       ~LNSConv2d.named_modules
       ~LNSConv2d.named_parameters
-      ~LNSConv2d.parameter_groups
       ~LNSConv2d.parameters
       ~LNSConv2d.register_backward_hook
       ~LNSConv2d.register_buffer

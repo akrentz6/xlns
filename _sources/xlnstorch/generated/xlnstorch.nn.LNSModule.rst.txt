@@ -33,6 +33,7 @@
       ~LNSModule.get_submodule
       ~LNSModule.half
       ~LNSModule.ipu
+      ~LNSModule.lns_parameters
       ~LNSModule.load_state_dict
       ~LNSModule.modules
       ~LNSModule.mtia
@@ -40,7 +41,6 @@
       ~LNSModule.named_children
       ~LNSModule.named_modules
       ~LNSModule.named_parameters
-      ~LNSModule.parameter_groups
       ~LNSModule.parameters
       ~LNSModule.register_backward_hook
       ~LNSModule.register_buffer

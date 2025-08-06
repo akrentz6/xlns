@@ -33,6 +33,7 @@
       ~LNSIdentity.get_submodule
       ~LNSIdentity.half
       ~LNSIdentity.ipu
+      ~LNSIdentity.lns_parameters
       ~LNSIdentity.load_state_dict
       ~LNSIdentity.modules
       ~LNSIdentity.mtia
@@ -40,7 +41,6 @@
       ~LNSIdentity.named_children
       ~LNSIdentity.named_modules
       ~LNSIdentity.named_parameters
-      ~LNSIdentity.parameter_groups
       ~LNSIdentity.parameters
       ~LNSIdentity.register_backward_hook
       ~LNSIdentity.register_buffer

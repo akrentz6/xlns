@@ -33,6 +33,7 @@
       ~LNSDropout.get_submodule
       ~LNSDropout.half
       ~LNSDropout.ipu
+      ~LNSDropout.lns_parameters
       ~LNSDropout.load_state_dict
       ~LNSDropout.modules
       ~LNSDropout.mtia
@@ -40,7 +41,6 @@
       ~LNSDropout.named_children
       ~LNSDropout.named_modules
       ~LNSDropout.named_parameters
-      ~LNSDropout.parameter_groups
       ~LNSDropout.parameters
       ~LNSDropout.register_backward_hook
       ~LNSDropout.register_buffer
