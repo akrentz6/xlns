@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>xlnstorch.LNSTensor.equal &mdash; xlns 1.0.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d55fa986"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="xlnstorch.LNSTensor.eq" href="xlnstorch.LNSTensor.eq.html" />
+    <link rel="prev" title="xlnstorch.LNSTensor.transpose" href="xlnstorch.LNSTensor.transpose.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            xlns
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Packages</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">xlnstorch</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../xlnstorch.html">xlnstorch</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../lnstensors.html">xlnstorch.LNSTensor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../lnstensors.html#mathematical-context-and-internal-representation">Mathematical Context and Internal Representation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../lnstensors.html#lnstensor-class-reference">LNSTensor class reference</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../lnstensors.html#xlnstorch.LNSTensor"><code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.get_internal_tensor.html">xlnstorch.LNSTensor.get_internal_tensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.base.html">xlnstorch.LNSTensor.base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.lns.html">xlnstorch.LNSTensor.lns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.value.html">xlnstorch.LNSTensor.value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.grad.html">xlnstorch.LNSTensor.grad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.shape.html">xlnstorch.LNSTensor.shape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.ndim.html">xlnstorch.LNSTensor.ndim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.requires_grad.html">xlnstorch.LNSTensor.requires_grad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.grad_fn.html">xlnstorch.LNSTensor.grad_fn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.view.html">xlnstorch.LNSTensor.view</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.item.html">xlnstorch.LNSTensor.item</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.size.html">xlnstorch.LNSTensor.size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.numel.html">xlnstorch.LNSTensor.numel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.backward.html">xlnstorch.LNSTensor.backward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.broadcast_to.html">xlnstorch.LNSTensor.broadcast_to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.expand.html">xlnstorch.LNSTensor.expand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.to.html">xlnstorch.LNSTensor.to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.dim.html">xlnstorch.LNSTensor.dim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.clone.html">xlnstorch.LNSTensor.clone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.squeeze.html">xlnstorch.LNSTensor.squeeze</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.unsqueeze.html">xlnstorch.LNSTensor.unsqueeze</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.detach.html">xlnstorch.LNSTensor.detach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.requires_grad_.html">xlnstorch.LNSTensor.requires_grad_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.add.html">xlnstorch.LNSTensor.add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.add_.html">xlnstorch.LNSTensor.add_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sub.html">xlnstorch.LNSTensor.sub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sub_.html">xlnstorch.LNSTensor.sub_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.mul.html">xlnstorch.LNSTensor.mul</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.mul_.html">xlnstorch.LNSTensor.mul_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.div.html">xlnstorch.LNSTensor.div</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.div_.html">xlnstorch.LNSTensor.div_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.pow.html">xlnstorch.LNSTensor.pow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.pow_.html">xlnstorch.LNSTensor.pow_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.neg.html">xlnstorch.LNSTensor.neg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.neg_.html">xlnstorch.LNSTensor.neg_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.abs.html">xlnstorch.LNSTensor.abs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.abs_.html">xlnstorch.LNSTensor.abs_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sqrt.html">xlnstorch.LNSTensor.sqrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sqrt_.html">xlnstorch.LNSTensor.sqrt_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.square.html">xlnstorch.LNSTensor.square</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.square_.html">xlnstorch.LNSTensor.square_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.reciprocal.html">xlnstorch.LNSTensor.reciprocal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.reciprocal_.html">xlnstorch.LNSTensor.reciprocal_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sign.html">xlnstorch.LNSTensor.sign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sign_.html">xlnstorch.LNSTensor.sign_</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.positive.html">xlnstorch.LNSTensor.positive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sum.html">xlnstorch.LNSTensor.sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.prod.html">xlnstorch.LNSTensor.prod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.transpose.html">xlnstorch.LNSTensor.transpose</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">xlnstorch.LNSTensor.equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.eq.html">xlnstorch.LNSTensor.eq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.ne.html">xlnstorch.LNSTensor.ne</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.ge.html">xlnstorch.LNSTensor.ge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.gt.html">xlnstorch.LNSTensor.gt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.le.html">xlnstorch.LNSTensor.le</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.lt.html">xlnstorch.LNSTensor.lt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.isclose.html">xlnstorch.LNSTensor.isclose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.allclose.html">xlnstorch.LNSTensor.allclose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.any.html">xlnstorch.LNSTensor.any</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.all.html">xlnstorch.LNSTensor.all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sort.html">xlnstorch.LNSTensor.sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.argsort.html">xlnstorch.LNSTensor.argsort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.kthvalue.html">xlnstorch.LNSTensor.kthvalue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.maximum.html">xlnstorch.LNSTensor.maximum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.minimum.html">xlnstorch.LNSTensor.minimum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.tanh.html">xlnstorch.LNSTensor.tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xlnstorch.LNSTensor.sigmoid.html">xlnstorch.LNSTensor.sigmoid</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../autograd.html">xlnstorch.autograd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operators.html">xlnstorch.operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nn.html">xlnstorch.nn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optim.html">xlnstorch.optim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../benchmark.html">Benchmarking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization.html">Visualization</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">xlns</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">xlnstorch</a></li>
+          <li class="breadcrumb-item"><a href="../lnstensors.html">xlnstorch.LNSTensor</a></li>
+      <li class="breadcrumb-item active">xlnstorch.LNSTensor.equal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/xlnstorch/generated/xlnstorch.LNSTensor.equal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xlnstorch-lnstensor-equal">
+<h1>xlnstorch.LNSTensor.equal<a class="headerlink" href="#xlnstorch-lnstensor-equal" title="Link to this heading"></a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="xlnstorch.LNSTensor.equal">
+<span class="sig-prename descclassname"><span class="pre">LNSTensor.</span></span><span class="sig-name descname"><span class="pre">equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.LNSTensor.equal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="xlnstorch.LNSTensor.transpose.html" class="btn btn-neutral float-left" title="xlnstorch.LNSTensor.transpose" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xlnstorch.LNSTensor.eq.html" class="btn btn-neutral float-right" title="xlnstorch.LNSTensor.eq" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, xlnsresearch.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
