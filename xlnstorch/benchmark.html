@@ -43,7 +43,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/benchmark';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="xlnstorch.benchmark.Benchmark" href="generated/xlnstorch.benchmark.Benchmark.html" />
+    <link rel="next" title="xlnstorch.benchmark.Benchmark" href="generated/benchmark/xlnstorch.benchmark.Benchmark.html" />
     <link rel="prev" title="Optimizers" href="optim.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -166,7 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nn.html">xlnstorch.nn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="optim.html">xlnstorch.optim</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">xlnstorch.benchmark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualization.html">Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viz.html">xlnstorch.viz</a></li>
 </ul>
 </details></li>
 </ul>
@@ -376,22 +376,22 @@ unary benchmark with a binary one:</p>
 <section id="benchmark-classes">
 <h2>Benchmark Classes<a class="headerlink" href="#benchmark-classes" title="Link to this heading">#</a></h2>
 <dl class="simple">
-<dt><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-class docutils literal notranslate"><span class="pre">Benchmark</span></code></a></dt><dd><p>Base class for creating custom benchmarks</p>
+<dt><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-class docutils literal notranslate"><span class="pre">Benchmark</span></code></a></dt><dd><p>Base class for creating custom benchmarks</p>
 </dd>
-<dt><a class="reference internal" href="generated/xlnstorch.benchmark.BenchmarkRunner.html#xlnstorch.benchmark.BenchmarkRunner" title="xlnstorch.benchmark.BenchmarkRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">BenchmarkRunner</span></code></a></dt><dd><p>Orchestrates benchmark execution with timing and profiling</p>
+<dt><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchmarkRunner.html#xlnstorch.benchmark.BenchmarkRunner" title="xlnstorch.benchmark.BenchmarkRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">BenchmarkRunner</span></code></a></dt><dd><p>Orchestrates benchmark execution with timing and profiling</p>
 </dd>
-<dt><a class="reference internal" href="generated/xlnstorch.benchmark.BenchResult.html#xlnstorch.benchmark.BenchResult" title="xlnstorch.benchmark.BenchResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BenchResult</span></code></a></dt><dd><p>Container for benchmark results and metrics</p>
+<dt><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchResult.html#xlnstorch.benchmark.BenchResult" title="xlnstorch.benchmark.BenchResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BenchResult</span></code></a></dt><dd><p>Container for benchmark results and metrics</p>
 </dd>
 </dl>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark</span></code></a></p></td>
 <td><p>Base-class that users should inherit from in order to create benchmarks.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.BenchmarkRunner.html#xlnstorch.benchmark.BenchmarkRunner" title="xlnstorch.benchmark.BenchmarkRunner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchmarkRunner</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchmarkRunner.html#xlnstorch.benchmark.BenchmarkRunner" title="xlnstorch.benchmark.BenchmarkRunner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchmarkRunner</span></code></a></p></td>
 <td><p>Orchestrates warm-up, steady-state timing and optional profiling.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.BenchResult.html#xlnstorch.benchmark.BenchResult" title="xlnstorch.benchmark.BenchResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchResult</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchResult.html#xlnstorch.benchmark.BenchResult" title="xlnstorch.benchmark.BenchResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchResult</span></code></a></p></td>
 <td><p>A container holding the aggregate numbers of a single benchmark run.</p></td>
 </tr>
 </tbody>
@@ -403,10 +403,10 @@ unary benchmark with a binary one:</p>
 <p>The module includes ready-to-use benchmark classes for common operations:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.UnaryBench.html#xlnstorch.benchmark.UnaryBench" title="xlnstorch.benchmark.UnaryBench"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryBench</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.UnaryBench.html#xlnstorch.benchmark.UnaryBench" title="xlnstorch.benchmark.UnaryBench"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnaryBench</span></code></a></p></td>
 <td><p>A benchmark for unary operations in xlnstorch or torch.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.BinaryBench.html#xlnstorch.benchmark.BinaryBench" title="xlnstorch.benchmark.BinaryBench"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryBench</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BinaryBench.html#xlnstorch.benchmark.BinaryBench" title="xlnstorch.benchmark.BinaryBench"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinaryBench</span></code></a></p></td>
 <td><p>A benchmark for binary operations in xlnstorch or torch.</p></td>
 </tr>
 </tbody>
@@ -415,7 +415,7 @@ unary benchmark with a binary one:</p>
 </section>
 <section id="creating-custom-benchmarks">
 <h2>Creating Custom Benchmarks<a class="headerlink" href="#creating-custom-benchmarks" title="Link to this heading">#</a></h2>
-<p>To create a custom benchmark, inherit from <a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-class docutils literal notranslate"><span class="pre">Benchmark</span></code></a> and
+<p>To create a custom benchmark, inherit from <a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.html#xlnstorch.benchmark.Benchmark" title="xlnstorch.benchmark.Benchmark"><code class="xref py py-class docutils literal notranslate"><span class="pre">Benchmark</span></code></a> and
 implement the required methods:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xlnstorch.benchmark</span> <span class="kn">import</span> <span class="n">Benchmark</span><span class="p">,</span> <span class="n">BenchmarkRunner</span>
 <span class="kn">import</span> <span class="nn">xlnstorch</span> <span class="k">as</span> <span class="nn">xltorch</span>
@@ -458,7 +458,7 @@ performance analysis:</p>
 </section>
 <section id="metrics-and-results">
 <h2>Metrics and Results<a class="headerlink" href="#metrics-and-results" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="generated/xlnstorch.benchmark.BenchResult.html#xlnstorch.benchmark.BenchResult" title="xlnstorch.benchmark.BenchResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BenchResult</span></code></a> provides comprehensive timing and memory metrics:</p>
+<p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchResult.html#xlnstorch.benchmark.BenchResult" title="xlnstorch.benchmark.BenchResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BenchResult</span></code></a> provides comprehensive timing and memory metrics:</p>
 <ul class="simple">
 <li><p><strong>Wall-clock timing</strong>: Mean latency and percentiles (P50, P90, P99)</p></li>
 <li><p><strong>CPU/CUDA time</strong>: Self-time reported by the profiler</p></li>
@@ -514,28 +514,28 @@ during training.</p>
 <p>For detailed API documentation, see the individual class and method documentation:</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.make_inputs.html#xlnstorch.benchmark.Benchmark.make_inputs" title="xlnstorch.benchmark.Benchmark.make_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.make_inputs</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.make_inputs.html#xlnstorch.benchmark.Benchmark.make_inputs" title="xlnstorch.benchmark.Benchmark.make_inputs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.make_inputs</span></code></a>()</p></td>
 <td><p>Produce input tensors for one iteration of the benchmark.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.forward.html#xlnstorch.benchmark.Benchmark.forward" title="xlnstorch.benchmark.Benchmark.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.forward</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.forward.html#xlnstorch.benchmark.Benchmark.forward" title="xlnstorch.benchmark.Benchmark.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.forward</span></code></a>(*args, **kwargs)</p></td>
 <td><p>The workload under test (e.g. <code class="docutils literal notranslate"><span class="pre">model(*args,</span> <span class="pre">**kwargs)</span></code>).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.post_forward.html#xlnstorch.benchmark.Benchmark.post_forward" title="xlnstorch.benchmark.Benchmark.post_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.post_forward</span></code></a>(output)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.post_forward.html#xlnstorch.benchmark.Benchmark.post_forward" title="xlnstorch.benchmark.Benchmark.post_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.post_forward</span></code></a>(output)</p></td>
 <td><p>Optional light-weight processing of the forward result.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.before_epoch.html#xlnstorch.benchmark.Benchmark.before_epoch" title="xlnstorch.benchmark.Benchmark.before_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.before_epoch</span></code></a>(idx)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.before_epoch.html#xlnstorch.benchmark.Benchmark.before_epoch" title="xlnstorch.benchmark.Benchmark.before_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.before_epoch</span></code></a>(idx)</p></td>
 <td><p>Called before the <em>idx</em>-th epoch.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.Benchmark.after_epoch.html#xlnstorch.benchmark.Benchmark.after_epoch" title="xlnstorch.benchmark.Benchmark.after_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.after_epoch</span></code></a>(idx)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.Benchmark.after_epoch.html#xlnstorch.benchmark.Benchmark.after_epoch" title="xlnstorch.benchmark.Benchmark.after_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Benchmark.after_epoch</span></code></a>(idx)</p></td>
 <td><p>Symmetric counterpart of <code class="xref py py-meth docutils literal notranslate"><span class="pre">before_epoch()</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.BenchmarkRunner.run.html#xlnstorch.benchmark.BenchmarkRunner.run" title="xlnstorch.benchmark.BenchmarkRunner.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchmarkRunner.run</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchmarkRunner.run.html#xlnstorch.benchmark.BenchmarkRunner.run" title="xlnstorch.benchmark.BenchmarkRunner.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchmarkRunner.run</span></code></a>()</p></td>
 <td><p>Execute the benchmark.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.BenchResult.print.html#xlnstorch.benchmark.BenchResult.print" title="xlnstorch.benchmark.BenchResult.print"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchResult.print</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchResult.print.html#xlnstorch.benchmark.BenchResult.print" title="xlnstorch.benchmark.BenchResult.print"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchResult.print</span></code></a>()</p></td>
 <td><p>Nicely format the dataclass to stdout (monospaced columns).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/xlnstorch.benchmark.BenchResult.save_full_profile.html#xlnstorch.benchmark.BenchResult.save_full_profile" title="xlnstorch.benchmark.BenchResult.save_full_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchResult.save_full_profile</span></code></a>(path[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/benchmark/xlnstorch.benchmark.BenchResult.save_full_profile.html#xlnstorch.benchmark.BenchResult.save_full_profile" title="xlnstorch.benchmark.BenchResult.save_full_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BenchResult.save_full_profile</span></code></a>(path[, ...])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -565,7 +565,7 @@ during training.</p>
       </div>
     </a>
     <a class="right-next"
-       href="generated/xlnstorch.benchmark.Benchmark.html"
+       href="generated/benchmark/xlnstorch.benchmark.Benchmark.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
