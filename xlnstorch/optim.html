@@ -50,7 +50,7 @@
 <li class="toctree-l2"><a class="reference internal" href="autograd.html">xlnstorch.autograd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html">xlnstorch.operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="layers.html">Layers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Optimizers</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">xlnstorch.optim</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#parameter-groups">Parameter Groups</a></li>
@@ -88,7 +88,7 @@
           <li class="breadcrumb-item"><a href="index.html">xlnstorch</a></li>
       <li class="breadcrumb-item active">Optimizers</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/xlnstorch/optimizers.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/xlnstorch/optim.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -108,7 +108,7 @@ for standard LNS training tasks.</p>
 <p>All optimizers in xlnstorch follow the same interface as PyTorch optimizers but
 are specifically designed to handle LNSTensor parameters. They support:</p>
 <ul class="simple">
-<li><p>LNSTensor and regular float learning rates and hyperparameters</p></li>
+<li><p>LNS and floating point learning rates and hyperparameters</p></li>
 <li><p>Automatic gradient handling for LNS arithmetic</p></li>
 <li><p>Parameter groups from LNS layers using <code class="docutils literal notranslate"><span class="pre">model.lns_parameters()</span></code></p></li>
 <li><p>Standard optimizer features like momentum, weight decay, and adaptive learning rates</p></li>
@@ -131,13 +131,13 @@ are specifically designed to handle LNSTensor parameters. They support:</p>
 
 <span class="c1"># Training loop</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 
-    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
 
-    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
