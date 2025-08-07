@@ -338,7 +338,7 @@ the PyTorch autograd graph for the given variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vars</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><em>torch.Tensor</em></a><em> | </em><a class="reference internal" href="../../lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a>) – The output variables for which to build the autograd graph.
+<li><p><strong>vars</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>torch.Tensor</em></a><em> | </em><a class="reference internal" href="../../lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a>) – The output variables for which to build the autograd graph.
 Typically just the one output of the loss function.</p></li>
 <li><p><strong>graph_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – The name of the graph to be displayed in the visualization.
 Defaults to “Autograd Graph”.</p></li>
@@ -350,7 +350,7 @@ outputs of any autograd function). Defaults to “orange”.</p></li>
 to “lightgrey”.</p></li>
 <li><p><strong>output_color</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – The color to use for the final output tensor node in the
 graph. Defaults to “yellow”.</p></li>
-<li><p><strong>params</strong> (<em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.7)"><em>torch.Tensor</em></a><em> | </em><a class="reference internal" href="../../lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>]</em><em>, </em><em>optional</em>) – An optional mapping <code class="docutils literal notranslate"><span class="pre">parameter_name</span> <span class="pre">-&gt;</span> <span class="pre">value</span></code> where <em>value</em>
+<li><p><strong>params</strong> (<em>Dict</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>torch.Tensor</em></a><em> | </em><a class="reference internal" href="../../lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>]</em><em>, </em><em>optional</em>) – An optional mapping <code class="docutils literal notranslate"><span class="pre">parameter_name</span> <span class="pre">-&gt;</span> <span class="pre">value</span></code> where <em>value</em>
 is either a <code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code> or an <code class="docutils literal notranslate"><span class="pre">LNSTensor</span></code> instance.
 If supplied, the corresponding nodes will be highlighted and
 annotated with the user-provided name, which makes it much
