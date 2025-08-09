@@ -906,14 +906,11 @@ parameters.</p>
     &amp;\hspace{5mm}\textbf{else}:                                         \\
     &amp;\hspace{10mm} g_t \leftarrow
                    \nabla_{\theta} f_t \left(\theta_{t-1}\right)        \\
-    &amp;\hspace{5mm} S_t \leftarrow
-                  \operatorname{sign} \bigl(\theta_{t-1}\bigr)
-                  \cdot
-                  \operatorname{sign} \left(g_t\right)                  \\
     &amp;\hspace{5mm} u_t \leftarrow
         \begin{cases}
-            \alpha^{-1}, &amp; \text{if } S_t                               \\
-            \alpha,      &amp; \text{otherwise}
+            \alpha^{-1}, &amp;\operatorname{sign} \bigl(\theta_{t-1}\bigr)
+                         = \operatorname{sign} \left(g_t\right)         \\
+            \alpha,      &amp;\text{otherwise}
         \end{cases}                                                     \\
     &amp;\hspace{5mm} \theta_t \leftarrow \theta_{t-1} \cdot u_t            \\[-1.ex]
     &amp;\rule{120mm}{0.4pt}                                                \\[-1.ex]
