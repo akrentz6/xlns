@@ -883,7 +883,7 @@ Must be a non-negative LNSTensor or float.</p></li>
 <h3>LNS Experimental Optimizers<a class="headerlink" href="#lns-experimental-optimizers" title="Link to this heading">#</a></h3>
 <dl class="py class" id="lnssignmul">
 <dt class="sig sig-object py" id="xlnstorch.optim.LNSSignMul">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.</span></span><span class="sig-name descname"><span class="pre">LNSSignMul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.LNSSignMul" title="Link to this definition">#</a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.</span></span><span class="sig-name descname"><span class="pre">LNSSignMul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.LNSSignMul" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LNSOptimizer</span></code></p>
 <p>Implements a simple sign multiplication algorithm for LNSTensor
 parameters.</p>
@@ -894,16 +894,20 @@ parameters.</p>
                       \theta_{0} \text{ (params)},\;
                       f(\theta) \text{ (objective)},\;
                       \textit{use_pow},\;                               \\
-    &amp;\hspace{17mm}    \textit{maximize}                                 \\
+    &amp;\hspace{17mm}    \textit{maximize},\;
+                      \sigma \text{ (weight scale)}                     \\
     &amp;\textbf{initialize} :                                              \\
     &amp;\hspace{5mm}\alpha \; = \;
         \begin{cases}
             2^{\gamma}, &amp; \text{if } \textit{use_pow}                   \\
             1 + \gamma, &amp; \text{otherwise}
         \end{cases}
-        \quad\text{(primary multiplier)}                                \\
+        \quad\text{(primary multiplier)},                               \\
     &amp;\hspace{5mm}  \alpha^{-1} \; = \; 1 / \alpha
-        \quad\text{(inverse multiplier)}                                \\[-1.ex]
+        \quad\text{(inverse multiplier)},                               \\
+    &amp;\hspace{5mm} \sigma^{*} \leftarrow \sigma \cdot
+                  \operatorname{RMS}\left(\theta_{0}\right)
+                  \text{ (max weight)}                                  \\[-1.ex]
     &amp;\rule{120mm}{0.4pt}                                                \\
     &amp;\textbf{for } t = 1 \textbf{ to } \ldots \textbf{ do}              \\
     &amp;\hspace{5mm}\textbf{if } \textit{maximize}:                        \\
@@ -919,7 +923,10 @@ parameters.</p>
                          = \operatorname{sign} \left(g_t\right)         \\
             \alpha,      &amp;\text{otherwise}
         \end{cases}                                                     \\
-    &amp;\hspace{5mm} \theta_t \leftarrow \theta_{t-1} \cdot u_t            \\[-1.ex]
+    &amp;\hspace{5mm} \theta_t \leftarrow \theta_{t-1} \cdot u_t            \\
+    &amp;\hspace{5mm} \theta_t \leftarrow
+                  \operatorname{clamp_{\sigma^{*}}}
+                  \left(\theta_t\right)                                 \\[-1.ex]
     &amp;\rule{120mm}{0.4pt}                                                \\[-1.ex]
     &amp;\textbf{return } \theta_t                                          \\[-1.ex]
     &amp;\rule{120mm}{0.4pt}                                                \\
