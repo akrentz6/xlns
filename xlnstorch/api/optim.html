@@ -402,6 +402,10 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSMadam.step"><code class="docutils literal notranslate"><span class="pre">LNSMadam.step()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSHybridMul"><code class="docutils literal notranslate"><span class="pre">LNSHybridMul</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSHybridMul.step"><code class="docutils literal notranslate"><span class="pre">LNSHybridMul.step()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -511,6 +515,7 @@ converted to LNSTensors with the default base.</p>
 <li><p><a class="reference internal" href="#lnssignmul"><span class="std std-ref">LNSSignMul</span></a> - Sign-based multiplication optimizer (experimental)</p></li>
 <li><p><a class="reference internal" href="#lnsmul"><span class="std std-ref">LNSMul</span></a> - Simple multiplication optimizer (experimental)</p></li>
 <li><p><a class="reference internal" href="#lnsmadam"><span class="std std-ref">LNSMadam</span></a> - Multiplicative Adam optimizer (experimental)</p></li>
+<li><p><a class="reference internal" href="#lnshybridmul"><span class="std std-ref">LNSHybridMul</span></a> - Hybrid multiplication optimizer (experimental)</p></li>
 </ul>
 </section>
 <section id="stochastic-gradient-descent-sgd">
@@ -881,6 +886,12 @@ Must be a non-negative LNSTensor or float.</p></li>
 </section>
 <section id="lns-experimental-optimizers">
 <h3>LNS Experimental Optimizers<a class="headerlink" href="#lns-experimental-optimizers" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that for all multiplicative optimizers below, weights
+should be initialized to non-zero values as multiplicative
+updates cannot change a zero weight.</p>
+</div>
 <dl class="py class" id="lnssignmul">
 <dt class="sig sig-object py" id="xlnstorch.optim.LNSSignMul">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.</span></span><span class="sig-name descname"><span class="pre">LNSSignMul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.LNSSignMul" title="Link to this definition">#</a></dt>
@@ -1085,6 +1096,58 @@ or float.</p></li>
 
 </dd></dl>
 
+<dl class="py class" id="lnshybridmul">
+<dt class="sig sig-object py" id="xlnstorch.optim.LNSHybridMul">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.</span></span><span class="sig-name descname"><span class="pre">LNSHybridMul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.LNSHybridMul" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LNSOptimizer</span></code></p>
+<p>Implements a hybrid multiplication algorithm for LNSTensor
+parameters. This optimizer uses a heuristic to decide between
+using a standard multiplicative update, a sign-based update
+or a gradient descent-like update.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    &amp;\rule{120mm}{0.4pt}                                                \\
+    &amp;\textbf{input} : \gamma \text{ (lr)},\;
+                      \theta_{0} \text{ (params)},\;
+                      f(\theta) \text{ (objective)}                     \\[-1.ex]
+    &amp;\rule{120mm}{0.4pt}                                                \\
+    &amp;\textbf{for } t = 1 \textbf{ to } \ldots \textbf{ do}              \\
+    &amp;\hspace{5mm} g_t \leftarrow
+                  \nabla_{\theta} f_t \left(\theta_{t-1}\right)         \\
+    &amp;\hspace{5mm} \textbf{if }
+                   \operatorname{sign} \bigl(\theta_{t-1}\bigr)
+                   = \operatorname{sign} \left(g_t\right)
+                   \lor \lvert g_t \rvert &lt; \gamma
+                   \lor \lvert \theta_{t-1} \rvert &lt; \gamma:            \\
+    &amp;\hspace{10mm} u_t \leftarrow
+                   1 / \left(1 + \gamma \lvert g_t \rvert \right)       \\
+    &amp;\hspace{5mm} \textbf{else}:                                        \\
+    &amp;\hspace{10mm} u_t \leftarrow
+                   \max \left( 2 ^ {\gamma},
+                   1 +  \gamma \cdot \lvert g_t /
+                   \theta_{t-1} \rvert \right)                          \\
+    &amp;\hspace{5mm} \theta_t \leftarrow \theta_{t-1} \cdot u_t            \\[-1.ex]
+    &amp;\rule{120mm}{0.4pt}                                                \\[-1.ex]
+    &amp;\textbf{return } \theta_t                                          \\[-1.ex]
+    &amp;\rule{120mm}{0.4pt}                                                \\
+\end{aligned}\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>iterable</em>) – An iterable of parameters to optimize or dicts defining parameter groups.
+This should be obtained from a model’s <cite>lns_parameters()</cite> method.</p></li>
+<li><p><strong>lr</strong> (<a class="reference internal" href="lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>optional</em>) – Learning rate (default: 0.01). Must be a non-negative LNSTensor or float.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="xlnstorch.optim.LNSHybridMul.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">closure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.LNSHybridMul.step" title="Link to this definition">#</a></dt>
+<dd><p>Performs a single optimization step.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 </section>
@@ -1207,6 +1270,10 @@ or float.</p></li>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSMadam"><code class="docutils literal notranslate"><span class="pre">LNSMadam</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSMadam.step"><code class="docutils literal notranslate"><span class="pre">LNSMadam.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSHybridMul"><code class="docutils literal notranslate"><span class="pre">LNSHybridMul</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.LNSHybridMul.step"><code class="docutils literal notranslate"><span class="pre">LNSHybridMul.step()</span></code></a></li>
 </ul>
 </li>
 </ul>
