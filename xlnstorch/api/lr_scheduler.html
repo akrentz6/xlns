@@ -328,7 +328,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSLRScheduler"><code class="docutils literal notranslate"><span class="pre">LNSLRScheduler</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.get_lr_bases"><code class="docutils literal notranslate"><span class="pre">get_lr_bases()</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -360,17 +360,23 @@ and support both float and LNSTensor learning rates. For example:</p>
     <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 </pre></div>
 </div>
-<dl class="py class">
-<dt class="sig sig-object py" id="xlnstorch.optim.lr_scheduler.LNSLRScheduler">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.lr_scheduler.</span></span><span class="sig-name descname"><span class="pre">LNSLRScheduler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.lr_scheduler.LNSLRScheduler" title="Link to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.LRScheduler.html#torch.optim.lr_scheduler.LRScheduler" title="(in PyTorch v2.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LRScheduler</span></code></a></p>
-<p>Base class for all LNS learning rate schedulers.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="xlnstorch.optim.lr_scheduler.get_lr_bases">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.lr_scheduler.</span></span><span class="sig-name descname"><span class="pre">get_lr_bases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.lr_scheduler.get_lr_bases" title="Link to this definition">#</a></dt>
+<dd><p>Returns a list of base values for the learning rates of each
+parameter group in the optimizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>optimizer</strong> (<em>LNSOptimizer</em>)</p></li>
-<li><p><strong>last_epoch</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>)</p></li>
-</ul>
+<dd class="field-odd"><p><strong>optimizer</strong> (<em>LNSOptimizer</em>) – The optimizer from which to extract the base learning rates.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of base learning rates for each parameter group.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)">torch.Tensor</a>]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – If the provided optimizer is not an instance of <cite>LNSOptimizer</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -388,6 +394,9 @@ and support both float and LNSTensor learning rates. For example:</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/optim/lr_scheduler/xlnstorch.optim.lr_scheduler.LNSMultiStepLR.html#xlnstorch.optim.lr_scheduler.LNSMultiStepLR" title="xlnstorch.optim.lr_scheduler.LNSMultiStepLR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSMultiStepLR</span></code></a></p></td>
 <td><p>An LNS learning rate scheduler that decays the learning rate of each parameter group by a factor of <cite>gamma</cite> at specified epochs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/optim/lr_scheduler/xlnstorch.optim.lr_scheduler.LNSConstantLR.html#xlnstorch.optim.lr_scheduler.LNSConstantLR" title="xlnstorch.optim.lr_scheduler.LNSConstantLR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LNSConstantLR</span></code></a></p></td>
+<td><p>An LNS learning rate scheduler that sets the learning rate of each parameter group to a constant value until a pre-determined number of epochs is reached.</p></td>
 </tr>
 </tbody>
 </table>
@@ -439,7 +448,7 @@ and support both float and LNSTensor learning rates. For example:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSLRScheduler"><code class="docutils literal notranslate"><span class="pre">LNSLRScheduler</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.get_lr_bases"><code class="docutils literal notranslate"><span class="pre">get_lr_bases()</span></code></a></li>
 </ul>
   </nav></div>
 
