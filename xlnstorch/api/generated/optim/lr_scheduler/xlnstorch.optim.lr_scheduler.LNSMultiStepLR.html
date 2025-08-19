@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xlnstorch.optim.lr_scheduler.LNSStepLR &#8212; xlns 1.0.5 documentation</title>
+    <title>xlnstorch.optim.lr_scheduler.LNSMultiStepLR &#8212; xlns 1.0.5 documentation</title>
   
   
   
@@ -40,11 +40,11 @@
     <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/optim/lr_scheduler/xlnstorch.optim.lr_scheduler.LNSStepLR';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/optim/lr_scheduler/xlnstorch.optim.lr_scheduler.LNSMultiStepLR';</script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="xlnstorch.optim.lr_scheduler.LNSMultiStepLR" href="xlnstorch.optim.lr_scheduler.LNSMultiStepLR.html" />
-    <link rel="prev" title="xlnstorch.optim.lr_scheduler.LNSMultiplicativeLR" href="xlnstorch.optim.lr_scheduler.LNSMultiplicativeLR.html" />
+    <link rel="next" title="Transforms" href="../../../transforms.html" />
+    <link rel="prev" title="xlnstorch.optim.lr_scheduler.LNSStepLR" href="xlnstorch.optim.lr_scheduler.LNSStepLR.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -234,7 +234,7 @@
       
       
       
-      <li><a href="../../../../../_sources/xlnstorch/api/generated/optim/lr_scheduler/xlnstorch.optim.lr_scheduler.LNSStepLR.rst" target="_blank"
+      <li><a href="../../../../../_sources/xlnstorch/api/generated/optim/lr_scheduler/xlnstorch.optim.lr_scheduler.LNSMultiStepLR.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>xlnstorch.optim.lr_scheduler.LNSStepLR</h1>
+    <h1>xlnstorch.optim.lr_scheduler.LNSMultiStepLR</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -328,8 +328,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSStepLR"><code class="docutils literal notranslate"><span class="pre">LNSStepLR</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSStepLR.__init__"><code class="docutils literal notranslate"><span class="pre">LNSStepLR.__init__()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR"><code class="docutils literal notranslate"><span class="pre">LNSMultiStepLR</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR.__init__"><code class="docutils literal notranslate"><span class="pre">LNSMultiStepLR.__init__()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -343,32 +343,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="xlnstorch-optim-lr-scheduler-lnssteplr">
-<h1>xlnstorch.optim.lr_scheduler.LNSStepLR<a class="headerlink" href="#xlnstorch-optim-lr-scheduler-lnssteplr" title="Link to this heading">#</a></h1>
+  <section id="xlnstorch-optim-lr-scheduler-lnsmultisteplr">
+<h1>xlnstorch.optim.lr_scheduler.LNSMultiStepLR<a class="headerlink" href="#xlnstorch-optim-lr-scheduler-lnsmultisteplr" title="Link to this heading">#</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="xlnstorch.optim.lr_scheduler.LNSStepLR">
-<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.lr_scheduler.</span></span><span class="sig-name descname"><span class="pre">LNSStepLR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.lr_scheduler.LNSStepLR" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="xlnstorch.optim.lr_scheduler.LNSMultiStepLR">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xlnstorch.optim.lr_scheduler.</span></span><span class="sig-name descname"><span class="pre">LNSMultiStepLR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">milestones</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR" title="Link to this definition">#</a></dt>
 <dd><p>An LNS learning rate scheduler that decays the learning rate of each parameter
-group by a factor of <cite>gamma</cite> every <cite>step_size</cite> epochs.</p>
-<p>See also: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.StepLR.html#torch.optim.lr_scheduler.StepLR" title="(in PyTorch v2.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">torch.optim.lr_scheduler.StepLR</span></code></a></p>
+group by a factor of <cite>gamma</cite> at specified epochs.</p>
+<p>See also: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.MultiStepLR.html#torch.optim.lr_scheduler.MultiStepLR" title="(in PyTorch v2.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">torch.optim.lr_scheduler.MultiStepLR</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>optimizer</strong> (<em>LNSOptimizer</em>) – Wrapped optimizer.</p></li>
-<li><p><strong>step_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – Period of learning rate decay.</p></li>
+<li><p><strong>milestones</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>]</em>) – List of epoch indices where the learning rate should be decayed.</p></li>
 <li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em> | </em><a class="reference internal" href="../../../lnstensors.html#xlnstorch.LNSTensor" title="xlnstorch.LNSTensor"><em>LNSTensor</em></a>) – Multiplicative factor of learning rate decay.</p></li>
 <li><p><strong>last_epoch</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><em>optional</em>) – The index of last epoch. Default: -1.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="xlnstorch.optim.lr_scheduler.LNSStepLR.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.lr_scheduler.LNSStepLR.__init__" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="xlnstorch.optim.lr_scheduler.LNSMultiStepLR.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">milestones</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR.__init__" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>optimizer</strong> (<em>LNSOptimizer</em>)</p></li>
-<li><p><strong>step_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>)</p></li>
+<li><p><strong>milestones</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>]</em>)</p></li>
 <li><p><strong>gamma</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em> | </em><em>LNSTensor</em>)</p></li>
 <li><p><strong>last_epoch</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>)</p></li>
 </ul>
@@ -379,7 +379,7 @@ group by a factor of <cite>gamma</cite> every <cite>step_size</cite> epochs.</p>
 <p class="rubric">Methods</p>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#xlnstorch.optim.lr_scheduler.LNSStepLR.__init__" title="xlnstorch.optim.lr_scheduler.LNSStepLR.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(optimizer, step_size[, gamma, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR.__init__" title="xlnstorch.optim.lr_scheduler.LNSMultiStepLR.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(optimizer, milestones[, gamma, ...])</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_last_lr</span></code>()</p></td>
@@ -416,20 +416,20 @@ group by a factor of <cite>gamma</cite> every <cite>step_size</cite> epochs.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xlnstorch.optim.lr_scheduler.LNSMultiplicativeLR.html"
+       href="xlnstorch.optim.lr_scheduler.LNSStepLR.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xlnstorch.optim.lr_scheduler.LNSMultiplicativeLR</p>
+        <p class="prev-next-title">xlnstorch.optim.lr_scheduler.LNSStepLR</p>
       </div>
     </a>
     <a class="right-next"
-       href="xlnstorch.optim.lr_scheduler.LNSMultiStepLR.html"
+       href="../../../transforms.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xlnstorch.optim.lr_scheduler.LNSMultiStepLR</p>
+        <p class="prev-next-title">Transforms</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -449,8 +449,8 @@ group by a factor of <cite>gamma</cite> every <cite>step_size</cite> epochs.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSStepLR"><code class="docutils literal notranslate"><span class="pre">LNSStepLR</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSStepLR.__init__"><code class="docutils literal notranslate"><span class="pre">LNSStepLR.__init__()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR"><code class="docutils literal notranslate"><span class="pre">LNSMultiStepLR</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.optim.lr_scheduler.LNSMultiStepLR.__init__"><code class="docutils literal notranslate"><span class="pre">LNSMultiStepLR.__init__()</span></code></a></li>
 </ul>
 </li>
 </ul>
