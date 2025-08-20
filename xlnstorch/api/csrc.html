@@ -43,6 +43,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/csrc';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="xlnstorch.csrc.float_to_lns_forward" href="generated/csrc/xlnstorch.csrc.float_to_lns_forward.html" />
     <link rel="prev" title="xlnstorch.viz.graph.make_autograd_graph" href="generated/viz/xlnstorch.viz.graph.make_autograd_graph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -343,6 +344,62 @@ for those operations, which may be slower but will still work correctly.</p>
 and use the <code class="docutils literal notranslate"><span class="pre">xlnstorch.csrc</span></code> module. To switch between the C++ and Python
 implementations, you can call the <cite>xlnstorch.operators.toggle_cpp_implementations()</cite>
 function.</p>
+<p>The following functions are available in the <cite>xlnstorch.csrc</cite> module. They should
+not be called directly by users, but if necessary, the following docs are provided
+for reference:</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.float_to_lns_forward.html#xlnstorch.csrc.float_to_lns_forward" title="xlnstorch.csrc.float_to_lns_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float_to_lns_forward</span></code></a>(x, base)</p></td>
+<td><p>Convert a tensor from floating-point representation to LNS representation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.float_to_lns_backward.html#xlnstorch.csrc.float_to_lns_backward" title="xlnstorch.csrc.float_to_lns_backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float_to_lns_backward</span></code></a>(grad, base)</p></td>
+<td><p>Convert the gradient from LNS representation back to floating-point representation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.change_base_forward.html#xlnstorch.csrc.change_base_forward" title="xlnstorch.csrc.change_base_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">change_base_forward</span></code></a>(x, old_base, new_base)</p></td>
+<td><p>Change the base of an LNS tensor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.change_base_backward.html#xlnstorch.csrc.change_base_backward" title="xlnstorch.csrc.change_base_backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">change_base_backward</span></code></a>(grad, old_base, new_base)</p></td>
+<td><p>Change the base of the gradient tensor from LNS representation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.set_default_sbdb_implementation.html#xlnstorch.csrc.set_default_sbdb_implementation" title="xlnstorch.csrc.set_default_sbdb_implementation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_default_sbdb_implementation</span></code></a>(impl_key)</p></td>
+<td><p>Sets the default implementation for the SBDB function used in LNS addition.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.get_table.html#xlnstorch.csrc.get_table" title="xlnstorch.csrc.get_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_table</span></code></a>(ez, sbdb, base)</p></td>
+<td><p>Gives access to the underlying data pointer of the sbdb Tensor and saves copies of the ez and base tensors.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.add_forward.html#xlnstorch.csrc.add_forward" title="xlnstorch.csrc.add_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_forward</span></code></a>(x, y, base)</p></td>
+<td><p>Perform LNS addition on two tensors internal representations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.sum_forward.html#xlnstorch.csrc.sum_forward" title="xlnstorch.csrc.sum_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum_forward</span></code></a>(x, base, dim, keepdim)</p></td>
+<td><p>Perform LNS summation over specified dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.matmul_forward.html#xlnstorch.csrc.matmul_forward" title="xlnstorch.csrc.matmul_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matmul_forward</span></code></a>(A, B, base)</p></td>
+<td><p>Perform LNS matrix multiplication.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.matmul_backward.html#xlnstorch.csrc.matmul_backward" title="xlnstorch.csrc.matmul_backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matmul_backward</span></code></a>(grad, A, B, base)</p></td>
+<td><p>Perform the backward pass for LNS matrix multiplication.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.conv1d_forward.html#xlnstorch.csrc.conv1d_forward" title="xlnstorch.csrc.conv1d_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv1d_forward</span></code></a>(x, weight, bias, base, ...)</p></td>
+<td><p>Perform LNS 1D convolution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.conv1d_backward.html#xlnstorch.csrc.conv1d_backward" title="xlnstorch.csrc.conv1d_backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv1d_backward</span></code></a>(grad, x, weight, base, ...)</p></td>
+<td><p>Perform the backward pass for LNS 1D convolution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.conv2d_forward.html#xlnstorch.csrc.conv2d_forward" title="xlnstorch.csrc.conv2d_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv2d_forward</span></code></a>(x, weight, bias, base, ...)</p></td>
+<td><p>Perform LNS 2D convolution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.conv2d_backward.html#xlnstorch.csrc.conv2d_backward" title="xlnstorch.csrc.conv2d_backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv2d_backward</span></code></a>(grad, x, weight, base, ...)</p></td>
+<td><p>Perform the backward pass for LNS 2D convolution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.conv3d_forward.html#xlnstorch.csrc.conv3d_forward" title="xlnstorch.csrc.conv3d_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv3d_forward</span></code></a>(x, weight, bias, base, ...)</p></td>
+<td><p>Perform LNS 3D convolution.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.conv3d_backward.html#xlnstorch.csrc.conv3d_backward" title="xlnstorch.csrc.conv3d_backward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv3d_backward</span></code></a>(grad, x, weight, base, ...)</p></td>
+<td><p>Perform the backward pass for LNS 3D convolution.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 
 
@@ -364,6 +421,15 @@ function.</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">xlnstorch.viz.graph.make_autograd_graph</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="generated/csrc/xlnstorch.csrc.float_to_lns_forward.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">xlnstorch.csrc.float_to_lns_forward</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
