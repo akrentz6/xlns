@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xlnstorch.csrc.conv3d_backward &#8212; xlns 1.0.5 documentation</title>
+    <title>xlnstorch.csrc.avg_pool1d_forward &#8212; xlns 1.0.5 documentation</title>
   
   
   
@@ -40,11 +40,10 @@
     <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/csrc/xlnstorch.csrc.conv3d_backward';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/csrc/xlnstorch.csrc.avg_pool1d_forward';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="xlnstorch.csrc.avg_pool1d_forward" href="xlnstorch.csrc.avg_pool1d_forward.html" />
-    <link rel="prev" title="xlnstorch.csrc.conv3d_forward" href="xlnstorch.csrc.conv3d_forward.html" />
+    <link rel="prev" title="xlnstorch.csrc.conv3d_backward" href="xlnstorch.csrc.conv3d_backward.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -235,7 +234,7 @@
       
       
       
-      <li><a href="../../../../_sources/xlnstorch/api/generated/csrc/xlnstorch.csrc.conv3d_backward.rst" target="_blank"
+      <li><a href="../../../../_sources/xlnstorch/api/generated/csrc/xlnstorch.csrc.avg_pool1d_forward.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>xlnstorch.csrc.conv3d_backward</h1>
+    <h1>xlnstorch.csrc.avg_pool1d_forward</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -329,7 +328,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.csrc.conv3d_backward"><code class="docutils literal notranslate"><span class="pre">conv3d_backward()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.csrc.avg_pool1d_forward"><code class="docutils literal notranslate"><span class="pre">avg_pool1d_forward()</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -341,34 +340,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="xlnstorch-csrc-conv3d-backward">
-<h1>xlnstorch.csrc.conv3d_backward<a class="headerlink" href="#xlnstorch-csrc-conv3d-backward" title="Link to this heading">#</a></h1>
+  <section id="xlnstorch-csrc-avg-pool1d-forward">
+<h1>xlnstorch.csrc.avg_pool1d_forward<a class="headerlink" href="#xlnstorch-csrc-avg-pool1d-forward" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.csrc.conv3d_backward">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.csrc.</span></span><span class="sig-name descname"><span class="pre">conv3d_backward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_defined</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride_d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride_h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.csrc.conv3d_backward" title="Link to this definition">#</a></dt>
-<dd><p>Perform the backward pass for LNS 3D convolution.</p>
+<dt class="sig sig-object py" id="xlnstorch.csrc.avg_pool1d_forward">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.csrc.</span></span><span class="sig-name descname"><span class="pre">avg_pool1d_forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ceil_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_include_pad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.csrc.avg_pool1d_forward" title="Link to this definition">#</a></dt>
+<dd><p>Perform LNS 1D average pooling.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>grad</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>torch.Tensor</em></a>) – The gradient tensor in LNS format (torch.int64).</p></li>
 <li><p><strong>x</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>torch.Tensor</em></a>) – The input tensor in LNS format (torch.int64).</p></li>
-<li><p><strong>weight</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>torch.Tensor</em></a>) – The convolution kernel in LNS format (torch.int64).</p></li>
+<li><p><strong>kernel_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The size of the pooling kernel.</p></li>
 <li><p><strong>base</strong> (<a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>torch.Tensor</em></a>) – The base for the LNS representation.</p></li>
-<li><p><strong>bias_defined</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – Whether the bias tensor is defined.</p></li>
-<li><p><strong>stride_d</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The depth stride of the convolution.</p></li>
-<li><p><strong>stride_h</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The height stride of the convolution.</p></li>
-<li><p><strong>stride_w</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The width stride of the convolution.</p></li>
-<li><p><strong>padding_d</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The depth padding applied to the input tensor.</p></li>
-<li><p><strong>padding_h</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The height padding applied to the input tensor.</p></li>
-<li><p><strong>padding_w</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The width padding applied to the input tensor.</p></li>
-<li><p><strong>dilation_d</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The depth dilation factor for the convolution.</p></li>
-<li><p><strong>dilation_h</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The height dilation factor for the convolution.</p></li>
-<li><p><strong>dilation_w</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The width dilation factor for the convolution.</p></li>
-<li><p><strong>groups</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The number of groups for the convolution.</p></li>
+<li><p><strong>stride</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><em>optional</em>) – The stride of the pooling operation. Defaults to kernel_size if None.</p></li>
+<li><p><strong>padding</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The padding applied to the input tensor.</p></li>
+<li><p><strong>ceil_mode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If True, will use ceil instead of floor to compute the output shape.</p></li>
+<li><p><strong>count_include_pad</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If True, will include the zero-padding in the averaging calculation.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)"><em>Tensor</em></a></p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output tensor in LNS format (torch.int64) after average pooling.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)">torch.Tensor</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -387,22 +381,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xlnstorch.csrc.conv3d_forward.html"
+       href="xlnstorch.csrc.conv3d_backward.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xlnstorch.csrc.conv3d_forward</p>
+        <p class="prev-next-title">xlnstorch.csrc.conv3d_backward</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="xlnstorch.csrc.avg_pool1d_forward.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xlnstorch.csrc.avg_pool1d_forward</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -420,7 +405,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.csrc.conv3d_backward"><code class="docutils literal notranslate"><span class="pre">conv3d_backward()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.csrc.avg_pool1d_forward"><code class="docutils literal notranslate"><span class="pre">avg_pool1d_forward()</span></code></a></li>
 </ul>
   </nav></div>
 
