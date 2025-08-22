@@ -43,7 +43,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/csrc';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="xlnstorch.csrc.float_to_lns_forward" href="generated/csrc/xlnstorch.csrc.float_to_lns_forward.html" />
+    <link rel="next" title="xlnstorch.csrc.load_backend" href="generated/csrc/xlnstorch.csrc.load_backend.html" />
     <link rel="prev" title="xlnstorch.viz.graph.make_autograd_graph" href="generated/viz/xlnstorch.viz.graph.make_autograd_graph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -339,6 +339,16 @@ only available if you have built the C++ extensions which is done automatically
 when you install xlnstorch (if you have a compatible C++ compiler). If the
 extensions are not built, xlnstorch will fall back to pure Python implementations
 for those operations, which may be slower but will still work correctly.</p>
+<p>To JIT compile and load the C++ extensions at runtime, you can call the
+<cite>xlnstorch.csrc.load_backend()</cite> function.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/csrc/xlnstorch.csrc.load_backend.html#xlnstorch.csrc.load_backend" title="xlnstorch.csrc.load_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_backend</span></code></a>([build_dir, verbose, enable_cpp])</p></td>
+<td><p>Try to compile and load the C++ extension if it is not already built and loaded.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>You can verify if the C++ extensions are available by checking the
 <code class="docutils literal notranslate"><span class="pre">xlnstorch.CSRC_AVAILABLE</span></code> flag. If it is set to <cite>True</cite>, you can import
 and use the <code class="docutils literal notranslate"><span class="pre">xlnstorch.csrc</span></code> module. To switch between the C++ and Python
@@ -423,11 +433,11 @@ for reference:</p>
       </div>
     </a>
     <a class="right-next"
-       href="generated/csrc/xlnstorch.csrc.float_to_lns_forward.html"
+       href="generated/csrc/xlnstorch.csrc.load_backend.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xlnstorch.csrc.float_to_lns_forward</p>
+        <p class="prev-next-title">xlnstorch.csrc.load_backend</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
