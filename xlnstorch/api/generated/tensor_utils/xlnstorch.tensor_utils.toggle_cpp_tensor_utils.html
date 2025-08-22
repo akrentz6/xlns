@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xlnstorch.tensor_utils.get_base_from_precision &#8212; xlns 1.0.5 documentation</title>
+    <title>xlnstorch.tensor_utils.toggle_cpp_tensor_utils &#8212; xlns 1.0.5 documentation</title>
   
   
   
@@ -40,11 +40,11 @@
     <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/tensor_utils/xlnstorch.tensor_utils.get_base_from_precision';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/tensor_utils/xlnstorch.tensor_utils.toggle_cpp_tensor_utils';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="xlnstorch.tensor_utils.get_precision_from_base" href="xlnstorch.tensor_utils.get_precision_from_base.html" />
-    <link rel="prev" title="xlnstorch.tensor_utils.toggle_cpp_tensor_utils" href="xlnstorch.tensor_utils.toggle_cpp_tensor_utils.html" />
+    <link rel="next" title="xlnstorch.tensor_utils.get_base_from_precision" href="xlnstorch.tensor_utils.get_base_from_precision.html" />
+    <link rel="prev" title="Tensor Utils" href="../../tensor_utils.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -235,7 +235,7 @@
       
       
       
-      <li><a href="../../../../_sources/xlnstorch/api/generated/tensor_utils/xlnstorch.tensor_utils.get_base_from_precision.rst" target="_blank"
+      <li><a href="../../../../_sources/xlnstorch/api/generated/tensor_utils/xlnstorch.tensor_utils.toggle_cpp_tensor_utils.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +319,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>xlnstorch.tensor_utils.get_base_from_precision</h1>
+    <h1>xlnstorch.tensor_utils.toggle_cpp_tensor_utils</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -329,7 +329,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.tensor_utils.get_base_from_precision"><code class="docutils literal notranslate"><span class="pre">get_base_from_precision()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.tensor_utils.toggle_cpp_tensor_utils"><code class="docutils literal notranslate"><span class="pre">toggle_cpp_tensor_utils()</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -341,25 +341,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="xlnstorch-tensor-utils-get-base-from-precision">
-<h1>xlnstorch.tensor_utils.get_base_from_precision<a class="headerlink" href="#xlnstorch-tensor-utils-get-base-from-precision" title="Link to this heading">#</a></h1>
+  <section id="xlnstorch-tensor-utils-toggle-cpp-tensor-utils">
+<h1>xlnstorch.tensor_utils.toggle_cpp_tensor_utils<a class="headerlink" href="#xlnstorch-tensor-utils-toggle-cpp-tensor-utils" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="xlnstorch.tensor_utils.get_base_from_precision">
-<span class="sig-prename descclassname"><span class="pre">xlnstorch.tensor_utils.</span></span><span class="sig-name descname"><span class="pre">get_base_from_precision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.tensor_utils.get_base_from_precision" title="Link to this definition">#</a></dt>
-<dd><p>Get the logarithmic base for a given precision.</p>
+<dt class="sig sig-object py" id="xlnstorch.tensor_utils.toggle_cpp_tensor_utils">
+<span class="sig-prename descclassname"><span class="pre">xlnstorch.tensor_utils.</span></span><span class="sig-name descname"><span class="pre">toggle_cpp_tensor_utils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_cpp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.tensor_utils.toggle_cpp_tensor_utils" title="Link to this definition">#</a></dt>
+<dd><p>Toggle the use of C++ implementations for tensor utility functions. This
+function is called by <cite>xlnstorch.operators.toggle_cpp_implementations()</cite>.</p>
+<p>In particular, this toggles the implementations for float to and from LNS
+conversions and base change operations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>f</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The precision (number of fractional exponent bits).
-Must be in range [1, 40].</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The corresponding logarithmic base (2^(2^(-f))).</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.pytorch.org/docs/stable/tensors.html#torch.Tensor" title="(in PyTorch v2.8)">torch.Tensor</a></p>
+<dd class="field-odd"><p><strong>use_cpp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – If True, use C++ implementations where available. If False, use
+pure Python implementations.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If precision f is outside the supported range [1, 40].</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.13)"><strong>RuntimeError</strong></a> – If C++ extensions are not available and <cite>use_cpp</cite> is True.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -378,20 +378,20 @@ Must be in range [1, 40].</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xlnstorch.tensor_utils.toggle_cpp_tensor_utils.html"
+       href="../../tensor_utils.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xlnstorch.tensor_utils.toggle_cpp_tensor_utils</p>
+        <p class="prev-next-title">Tensor Utils</p>
       </div>
     </a>
     <a class="right-next"
-       href="xlnstorch.tensor_utils.get_precision_from_base.html"
+       href="xlnstorch.tensor_utils.get_base_from_precision.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xlnstorch.tensor_utils.get_precision_from_base</p>
+        <p class="prev-next-title">xlnstorch.tensor_utils.get_base_from_precision</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -411,7 +411,7 @@ Must be in range [1, 40].</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.tensor_utils.get_base_from_precision"><code class="docutils literal notranslate"><span class="pre">get_base_from_precision()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.tensor_utils.toggle_cpp_tensor_utils"><code class="docutils literal notranslate"><span class="pre">toggle_cpp_tensor_utils()</span></code></a></li>
 </ul>
   </nav></div>
 
