@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>xlnstorch.LNSTensor.view &#8212; xlns 1.0.5 documentation</title>
+    <title>xlnstorch.LNSTensor.contiguous &#8212; xlns 1.0.5 documentation</title>
   
   
   
@@ -40,11 +40,11 @@
     <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/xlnstorch.LNSTensor.view';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xlnstorch/api/generated/xlnstorch.LNSTensor.contiguous';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="xlnstorch.LNSTensor.contiguous" href="xlnstorch.LNSTensor.contiguous.html" />
-    <link rel="prev" title="xlnstorch.LNSTensor.grad_fn" href="xlnstorch.LNSTensor.grad_fn.html" />
+    <link rel="next" title="xlnstorch.LNSTensor.item" href="xlnstorch.LNSTensor.item.html" />
+    <link rel="prev" title="xlnstorch.LNSTensor.view" href="xlnstorch.LNSTensor.view.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -237,7 +237,7 @@
       
       
       
-      <li><a href="../../../_sources/xlnstorch/api/generated/xlnstorch.LNSTensor.view.rst" target="_blank"
+      <li><a href="../../../_sources/xlnstorch/api/generated/xlnstorch.LNSTensor.contiguous.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>xlnstorch.LNSTensor.view</h1>
+    <h1>xlnstorch.LNSTensor.contiguous</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -331,7 +331,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.LNSTensor.view"><code class="docutils literal notranslate"><span class="pre">LNSTensor.view()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.LNSTensor.contiguous"><code class="docutils literal notranslate"><span class="pre">LNSTensor.contiguous()</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -343,19 +343,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="xlnstorch-lnstensor-view">
-<h1>xlnstorch.LNSTensor.view<a class="headerlink" href="#xlnstorch-lnstensor-view" title="Link to this heading">#</a></h1>
+  <section id="xlnstorch-lnstensor-contiguous">
+<h1>xlnstorch.LNSTensor.contiguous<a class="headerlink" href="#xlnstorch-lnstensor-contiguous" title="Link to this heading">#</a></h1>
 <dl class="py method">
-<dt class="sig sig-object py" id="xlnstorch.LNSTensor.view">
-<span class="sig-prename descclassname"><span class="pre">LNSTensor.</span></span><span class="sig-name descname"><span class="pre">view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.LNSTensor.view" title="Link to this definition">#</a></dt>
-<dd><p>Returns a new tensor with the same data as this LNSTensor
-but with a different shape.</p>
+<dt class="sig sig-object py" id="xlnstorch.LNSTensor.contiguous">
+<span class="sig-prename descclassname"><span class="pre">LNSTensor.</span></span><span class="sig-name descname"><span class="pre">contiguous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memory_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">torch.contiguous_format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xlnstorch.LNSTensor.contiguous" title="Link to this definition">#</a></dt>
+<dd><p>Returns a contiguous copy of the LNSTensor in memory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>shape</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>LNSTensor</em></p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>LNSTensor</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -374,20 +370,20 @@ but with a different shape.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="xlnstorch.LNSTensor.grad_fn.html"
+       href="xlnstorch.LNSTensor.view.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">xlnstorch.LNSTensor.grad_fn</p>
+        <p class="prev-next-title">xlnstorch.LNSTensor.view</p>
       </div>
     </a>
     <a class="right-next"
-       href="xlnstorch.LNSTensor.contiguous.html"
+       href="xlnstorch.LNSTensor.item.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">xlnstorch.LNSTensor.contiguous</p>
+        <p class="prev-next-title">xlnstorch.LNSTensor.item</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -407,7 +403,7 @@ but with a different shape.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.LNSTensor.view"><code class="docutils literal notranslate"><span class="pre">LNSTensor.view()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xlnstorch.LNSTensor.contiguous"><code class="docutils literal notranslate"><span class="pre">LNSTensor.contiguous()</span></code></a></li>
 </ul>
   </nav></div>
 
